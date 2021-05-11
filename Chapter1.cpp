@@ -358,3 +358,173 @@ range of numbers so that it handles input in which the first number is smaller t
 //     }
 //     return 0;
 // }
+
+/* ----------------------------------------Section 1.5.1-----------------------------------------------------
+
+Exercise 1.20: http://www.informit.com/title/032174113 contains a copy of Sales_item.h in the Chapter 1 code directory.
+Copy that file to your working directory. Use it to write a program that reads a set of book sales transactions,
+writing each transaction to the standard output.  */
+
+// #include <iostream>
+// #include "Sales_item.h"
+// using namespace std;
+
+// int main()
+// {
+//     Sales_item item;
+//     cout << "Enter the book sale transaction: ";
+//     while(cin >> item)
+//     {
+//         cout << "The book sales transaction is: " << item;
+//     }
+//     return 0;
+// }
+
+/* Exercise 1.21: Write a program that reads two Sales_item objects that have the same ISBN and produces their sum. */
+
+// #include <iostream>
+// #include "Sales_item.h"
+// using namespace std;
+
+// int main()
+// {
+//     Sales_item item1, item2;
+//     cout << "Enter 2 books: ";
+//     cin >> item1 >> item2;
+//     if(item1.isbn()==item2.isbn())
+//     {
+//         cout << "Sum: " << item1+item2;
+//     }
+//     else {
+//         cout << "Error: Different ISBN. ";
+//     }
+//     return 0;
+// }
+
+/*  Exercise 1.22: Write a program that reads several transactions for the same ISBN.
+    Write the sum of all the transactions that were read. */
+
+// #include<iostream>
+// #include "Sales_item.h"
+// using namespace std;
+
+// int main()
+// {
+//     Sales_item book;
+
+//     if(cin>>book)
+//     {
+//         Sales_item item;
+//         while(cin >> item)
+//         {
+//             if(book.isbn()==item.isbn())
+//             {
+//                 book+=item;
+//             }
+//             else
+//             {
+//                 cout << "Sum of transaction: " << book <<endl;
+//                 book = item;   // to start adding the new book entered.
+//             }
+//         }
+//         cout << "Sum of transaction: " << book <<endl;
+//     }
+//     else
+//     {
+//         cerr << "No Data!";   //  cerr: represents the standard error
+//         return -1;   //  -1 indicates error
+//     }
+//     return 0;
+// }
+
+/* ----------------------------------------Section 1.5.2-----------------------------------------------------
+
+Exercise 1.23: Write a program that reads several transactions and counts how many transactions occur for each ISBN. */
+
+// #include <iostream>
+// #include "Sales_item.h"
+
+// using namespace std;
+
+// int main()
+// {
+//     int count = 1;
+//     Sales_item currentBook;
+
+//     if(cin>>currentBook)
+//     {
+//         Sales_item newBook;
+//         while(cin >> newBook)
+//         {
+//             if(currentBook.isbn()==newBook.isbn())
+//             {
+//                 count++;
+//             }
+//             else
+//             {
+//                 cout <<  currentBook << " occurs " << count << " times." <<endl;
+//                 currentBook = newBook;   
+//                 count=1;
+//             }
+//         }
+//     }
+//     else
+//     {
+//         cerr << "No Data!";   //  cerr: represents the standard error
+//         return -1;   //  indicates error
+//     }
+//     return 0;
+    
+// }
+
+/*  Exercise 1.24: Test the previous program by giving multiple transactions representing multiple ISBNs.
+    The records for each ISBN should be grouped together.  */
+
+/*  0-201-78345-X 3 20.00
+    0-201-78345-X 3 20.00
+    0-201-78345-X 3 20.00
+    0-201-78345-X 3 20.00
+    0-201-78315-X 3 20.00
+    0-201-78345-X 3 60 20 occurs 4 times.
+    0-201-78315-X 3 20.00
+    0-201-78315-X 3 20.00
+    0-201-72315-X 3 20.00 
+    0-201-78315-X 3 60 20 occurs 3 times. */
+
+/* ----------------------------------------Section 1.6-----------------------------------------------------
+
+Exercise 1.25: Using the Sales_item.h header from the Web site, compile and execute the bookstore program 
+presented in this section.  */
+
+// #include <iostream>
+// #include "Sales_item.h"
+// using namespace std;
+
+// int main()
+// {
+//     Sales_item total;
+
+//     if(cin>>total)
+//     {
+//         Sales_item trans;
+//         while(cin >> trans)
+//         {
+//             if(total.isbn()==trans.isbn())
+//             {
+//                 total+=trans;
+//             }
+//             else
+//             {
+//                 cout << "Sum of transaction: " << total <<endl;
+//                 total = trans;   
+//             }
+//         }
+//         cout << "Sum of transaction: " << total <<endl;
+//     }
+//     else
+//     {
+//         cerr << "No Data!";   //  cerr: represents the standard error
+//         return -1;   //  indicates error
+//     }
+//     return 0;
+// }
