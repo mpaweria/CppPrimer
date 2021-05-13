@@ -189,3 +189,40 @@ Exercise 2.13: What is the value of j in the following program?
 
 //  Yes, the given program is legal. It's output will be 100 and 45.
 //  As the cout statement is outside the scope of for loop, it will print the value of above initialized i i.e. 100;
+
+
+/* ----------------------------------------Section 2.2.3----------------------------------------------------- 
+
+Exercise 2.15: Which of the following definitions, if any, are
+invalid? Why?
+(a) int ival = 1.01;
+(b) int &rval1 = 1.01;
+(c) int &rval2 = ival;
+(d) int &rval3;   */
+
+/*  (a) Valid: ival is an int initialized to 1.01.
+    (b) Invalide: rval1 is a reference and reference can't be initialized to a literal.
+    (c) Valid: rval2 is a reference to ival.
+    (d) Invalid: reference must be initialized.    */
+
+
+/*  Exercise 2.16: Which, if any, of the following assignments are invalid?
+    If they are valid, explain what they do.
+    int i = 0, &r1 = i; double d = 0, &r2 = d;
+    (a) r2 = 3.14159;
+    (b) r2 = r1;
+    (c) i = r2;
+    (d) r1 = d;   */
+
+/*  (a): Valid. d = 3.14159.
+    (b): Valid. Automatic convert will happen.
+    (c): Valid, but value will be truncated.
+    (d): Valid, but value will be truncated. */
+
+
+/*  Exercise 2.17: What does the following code print?
+    int i, &ri = i;
+    i = 5; ri = 10;
+    std::cout << i << " " << ri << std::endl;  */
+
+//  The given code will print 10 10. 
