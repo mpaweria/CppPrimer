@@ -191,7 +191,7 @@ Exercise 2.13: What is the value of j in the following program?
 //  As the cout statement is outside the scope of for loop, it will print the value of above initialized i i.e. 100;
 
 
-/* ----------------------------------------Section 2.2.3----------------------------------------------------- 
+/* ----------------------------------------Section 2.3.1----------------------------------------------------- 
 
 Exercise 2.15: Which of the following definitions, if any, are
 invalid? Why?
@@ -226,3 +226,77 @@ invalid? Why?
     std::cout << i << " " << ri << std::endl;  */
 
 //  The given code will print 10 10. 
+
+
+/* ----------------------------------------Section 2.3.2----------------------------------------------------- 
+
+Exercise 2.18: Write code to change the value of a pointer. Write code to change the value to which the pointer points.  */
+
+#include <iostream>
+using namespace std;
+
+int main()
+{ 
+    int val1=10, val2=20;
+    int *ptr1 = &val1;
+    cout << *ptr1 << " " << val1 << " " << ptr1 << endl;
+    ptr1 = &val2;         // the pointer ptr1 is now pointing to val2.
+    cout << *ptr1 << " " << val2 << " " << ptr1 << endl;
+    *ptr1 = 50;           // 50 is assigned to val2 using ptr1.
+    cout << *ptr1 << " " << val2 << " " << ptr1 << endl;
+}
+
+
+/*  Exercise 2.19: Explain the key differences between pointers and references.  */
+
+/*  Definition
+    (a) Pointer "points to" any other type.
+    (b) Reference is "another name" of an object.
+    Key Difference:
+    1. A reference is another name of an already existing object. A pointer is an object in its own right.
+    2. Once initialized, a reference remains bound to its initial object. There is no way to rebind a reference to 
+       refer to a different object. A pointer can be assigned and copied.
+    3. A reference always get the object to which the reference was initially bound. A single pointer can point to 
+       several different objects over its lifetime.
+    4. A reference must be initialized. A pointer need not be initialized when it is defined.    */
+
+
+/*  Exercise 2.20: What does the following program do?
+        int i = 42;
+        int *p1 = &i;
+        *p1 = *p1 * *p1;    */
+
+/*  The given program initialises the variable i to 42. A pointer p1 points to i. i now holds the value 1764(42*42) as 
+    *p1 = 42 (deferenced).   */
+
+
+/*  Exercise 2.21: Explain each of the following definitions. Indicate whether any are illegal and, if so, why.
+        int i = 0;
+        (a) double* dp = &i;
+        (b) int *ip = i;
+        (c) int *p = &i;   */
+
+/*  (a) Invalid: error: cannot convert 'int*' to 'double*' in initialization.
+    (b) Invalid: error: invalid conversion from 'int' to 'int*.
+    (c) Valid    */
+
+
+/*  Exercise 2.22: Assuming p is a pointer to int, explain the following code:
+    if (p) // ...
+    if (*p) // ...    */
+
+/*  (a) Weather p is a nullptr?
+    (b) Weather the intger, p is pointing to is 0 or not.   */
+
+
+/*  Exercise 2.23: Given a pointer p, can you determine whether p points to a valid object? If so, how? If not, why not?  */
+
+/*  There is no way to distinguish a valid address from an invalid one from the bits that are in 
+    the memory in which the pointer was allocated.   */
+
+
+/*  Exercise 2.24: Why is the initialization of p legal but that of lp illegal?
+        int i = 42; void p = &i; long lp = &i;
+
+/*  p is a pointer to void, so it can point to any value type.
+    lp is a poinet to long ,so it's should point to long but is pointing to int valuw therefor it is an incorrect statement.  */
