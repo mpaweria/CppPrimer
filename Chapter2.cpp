@@ -232,19 +232,19 @@ invalid? Why?
 
 Exercise 2.18: Write code to change the value of a pointer. Write code to change the value to which the pointer points.  */
 
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-int main()
-{ 
-    int val1=10, val2=20;
-    int *ptr1 = &val1;
-    cout << *ptr1 << " " << val1 << " " << ptr1 << endl;
-    ptr1 = &val2;         // the pointer ptr1 is now pointing to val2.
-    cout << *ptr1 << " " << val2 << " " << ptr1 << endl;
-    *ptr1 = 50;           // 50 is assigned to val2 using ptr1.
-    cout << *ptr1 << " " << val2 << " " << ptr1 << endl;
-}
+// int main()
+// { 
+//     int val1=10, val2=20;
+//     int *ptr1 = &val1;
+//     cout << *ptr1 << " " << val1 << " " << ptr1 << endl;
+//     ptr1 = &val2;         // the pointer ptr1 is now pointing to val2.
+//     cout << *ptr1 << " " << val2 << " " << ptr1 << endl;
+//     *ptr1 = 50;           // 50 is assigned to val2 using ptr1.
+//     cout << *ptr1 << " " << val2 << " " << ptr1 << endl;
+// }
 
 
 /*  Exercise 2.19: Explain the key differences between pointers and references.  */
@@ -299,4 +299,127 @@ int main()
         int i = 42; void p = &i; long lp = &i;
 
 /*  p is a pointer to void, so it can point to any value type.
-    lp is a poinet to long ,so it's should point to long but is pointing to int valuw therefor it is an incorrect statement.  */
+    lp is a poiner to a long ,so it's should point to long but is pointing to int valuw therefor it is an incorrect statement.  */
+
+
+/* ----------------------------------------Section 2.3.3----------------------------------------------------- 
+
+Exercise 2.25: Determine the types and values of each of the following variables.
+(a) int* ip, &r = ip;
+(b) int i, *ip = 0;
+(c) int* ip, ip2;    */
+
+/*  (a) ip is a pointer to int and r is the reference to pointer ip.
+    (b) i is an int variable and ip is a valid null pointer.
+    (c) ip is a pointer to int and ip2 is an int variable.    */
+
+
+/* -------------------------------------------Section 2.4------------------------------------------------------ 
+
+Exercise 2.26: Which of the following are legal? For those that are illegal, explain why.
+(a) const int buf;
+(b) int cnt = 0;
+(c) const int sz = cnt;
+(d) ++cnt; ++sz;   */
+
+/*  (a) Illegal: const variable must be initialized.
+    (b) Legal.
+    (c) Legal.
+    (d) Illegal: sz is a const so its value can't be changed.    */
+
+
+/* ----------------------------------------Section 2.4.2----------------------------------------------------- 
+
+Exercise 2.27: Which of the following initializations are legal? Explain why.
+(a) int i = -1, &r = 0;
+(b) int *const p2 = &i2;
+(c) const int i = -1, &r = 0;
+(d) const int *const p3 = &i2;
+(e) const int *p1 = &i2;
+(f) const int &const r2;
+(g) const int i2 = i, &r = i;   */
+
+/*  (a) Illegal: r must refer to an object.
+    (b) Legal: p2 is a const pointer to int i2.
+    (c) Legal.
+    (d) Legal: p3 is a const pointer to a const integar i2.
+    (e) Legal: p1 is a pointer to const int i2.
+    (f) Illegal: r2 must refer to an object.
+    (g) Legal: i2 is a const int and r is a const refernce to int i.   */
+
+
+/*  Exercise 2.28: Explain the following definitions. Identify any that are illegal.
+(a) int i, *const cp;
+(b) int *p1, *const p2;
+(c) const int ic, &r = ic;
+(d) const int *const p3;
+(e) const int *p;      */
+
+/*  (a) Illegal: cp must be initialized (as it is a const).
+    (b) Illegal: p2 must be initialized.
+    (c) Illegal: ic must be initialized.
+    (d) Illegal: p3 must be initialized.
+    (e) Legal.     */
+
+
+/*  Exercise 2.29: Using the variables in the previous exercise, which of the following assignments are legal? Explain why.
+(a) i = ic;
+(b) p1 = p3;
+(c) p1 = &ic;
+(d) p3 = &ic;
+(e) p2 = p1;
+(f) ic = *p3;    */
+
+/*  (a) Legal.
+    (b) Illegal: error: invalid conversion from 'const int*' to 'int*'.
+    (c) Illegal: error: invalid conversion from 'const int*' to 'int*'.
+    (d) Illegal: error: assignment of read-only variable 'p3'.
+    (e) Illegal: error: assignment of read-only variable 'p2'.
+    (f) Illegal: error: assignment of read-only variable 'ic'.    */
+
+
+/* ----------------------------------------Section 2.4.3----------------------------------------------------- 
+
+Exercise 2.30: For each of the following declarations indicate whether the object being declared has top-level or low-level const.
+    const int v2 = 0; int v1 = v2;
+    int *p1 = &v1, &r1 = v1;
+    const int *p2 = &v2, *const p3 = &i, &r2 = v2;   */
+
+/*  v2: Top-level
+    v1: Nil
+    p1: Nil
+    r1: Top-level
+    p2: Low-level
+    p3: Low-level, Top-level
+    r2: Low-level, Top-level    */
+
+
+/*  Exercise 2.31: Given the declarations in the previous exercise determine whether the following assignments are legal. 
+    Explain how the top-level or low-level const applies in each case.
+        r1 = v2;
+        p1 = p2; p2 = p1;
+        p1 = p3; p2 = p3;   */
+
+/*  r1 = v2;
+    p1 = p2;
+    p2 = p1;
+    p1 = p3;
+    p2 = p3;
+    Legal, top-level const in v2 is ignored.
+    Illegal, p2 has a low-level const but p1 doesn't.
+    Legal, we can convert int* to const int*.
+    Illegal, p3 has a low-level const but p1 doesn't.
+    Legal, p2 has the same low-level const qualification as p3.   */
+
+
+/* ----------------------------------------Section 2.4.4----------------------------------------------------- 
+
+Exercise 2.32: Is the following code legal or not? If not, how might you make it legal?
+int null = 0, *p = null;   */
+
+/*  Illegal:  error: invalid conversion from 'int' to 'int*'.
+    If we want to make p a null pointer,
+    Code: int null = 0, *p = nullptr;
+
+    And, if we want p to point to the int null then,
+    Code: int null = 0, *p = &null;    */
