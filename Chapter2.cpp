@@ -423,3 +423,133 @@ int null = 0, *p = null;   */
 
     And, if we want p to point to the int null then,
     Code: int null = 0, *p = &null;    */
+
+
+/* ----------------------------------------Section 2.5.2----------------------------------------------------- 
+
+Exercise 2.33: Using the variable definitions from this section, determine what happens in each of these assignments:
+    a = 42; b = 42; c = 42;
+    d = 42; e = 42; g = 42;    */
+
+/*  Set 42 to int a.
+    Set 42 to int b.
+    Set 42 to int c.
+    ERROR, d is an int *. correct: *d = 42;
+    ERROR, e is an const int *. correct: e = &c;
+    ERROR, g is a const int& that is bound to ci, assignment can't be done.   */
+
+
+/*  Exercise 2.34: Write a program containing the variables and assignments from the previous exercise. Print the 
+    variables before and  after the  assignments to check whether your predictions in the previous exercise were correct. 
+    If not, study the examples until you can convince yourself you know what led you to the wrong conclusion.    */
+
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+// 	int i = 0, &r = i;
+// 	const int ci = i, &cr = ci;
+
+// 	auto a = r;  // a is an int (r is an alias for i, which has type int)
+// 	auto b = ci;  // b is an int (top-level const in ci is dropped)
+// 	auto c = cr;  // c is an int (cr is an alias for ci whose const is top-level)
+// 	auto d = &i;  // d is an int* (& ofan int objectis int*)
+// 	auto e = &ci;  // e is const int*(& of a const object is low-level const)
+// 	const auto f = ci;  // deduced type of ci is int; f has type const int
+// 	auto &g = ci;  // g is a const int& that is bound to ci
+//     cout << " a " << a << " b " << b << " c " << c <<" d " << d << " e " << e << " g " << g << endl;
+
+// 	a = 42;
+// 	b = 42;
+// 	c = 42;
+// 	*d = 42;
+// 	e = &c;
+//     cout << " a " << a << " b " << b << " c " << c <<" d " << d << " e " << e << " g " << g << endl;
+
+// 	return 0;
+// }
+
+
+/*  Exercise 2.35: Determine the types deduced in each of the following definitions. Once you’ve figured out the types, 
+    write a program to see whether you were correct.
+    const int i = 42;
+    auto j = i; 
+    const auto &k = i; 
+    auto *p = &i;
+    const auto j2 = i, &k2 = i;     */
+
+/*  i is a const int.
+    j is an int.
+    k is a const reference to an int.
+    p is a pointer to a const int.
+    j2 is a const int
+    k2 is a const reference to int.   */
+
+// #include <iostream>
+// #include <typeinfo>
+
+// int main()
+// {
+//     const int i = 42;
+//     auto j = i;
+//     const auto &k = i;
+//     auto *p = &i;
+//     const auto j2 = i, &k2 = i;
+
+//     std::cout   << "j is "      << typeid(j).name()
+//                 << "\nk is "    << typeid(k).name()
+//                 << "\np is "    << typeid(p).name()
+//                 << "\nj2 is "   << typeid(j2).name()
+//                 << "\nk2 is "   << typeid(k2).name()
+//                 << std::endl;
+
+//     return 0;
+// }
+/*  OUTPUT
+    j is i          //i means int
+    k is i
+    p is PKi        //PKi means pointer to const int.
+    j2 is i
+    k2 is i   */
+
+
+/* ----------------------------------------Section 2.5.3-----------------------------------------------------
+
+Exercise 2.36: In the following code, determine the type of each variable and the value each variable has when the code finishes:
+    int a = 3, b = 4;
+    decltype(a) c = a;
+    decltype((b)) d = a;
+    ++c;
+    ++d;    */
+
+//  c is an int and d is a reference to an int.   a=4, b=4, c=4, d=4.   
+
+
+/*  Exercise 2.37: Assignment is an example of an expression that yields a reference type. The type is a reference to 
+    the type of the left hand operand. That is, if i is an int, then the type of the expression i = x is int&. 
+    Using that knowledge, determine the type and value of each variable in this code:
+    int a = 3, b = 4;
+    decltype(a) c = a;
+    decltype(a = b) d = a;     */
+
+//  c is an int and d is a refernce to an int.    a=3, b=4, c=3, d=3.
+
+
+/*  Exercise 2.38: Describe the differences in type deduction between decltype and auto. Give an example of an expression 
+    where auto and decltype will deduce the same type and an example where they will deduce differing types.   */
+
+/*  The way decltype handles top-level const and references differs from the way auto does.
+    Another difference is that the deduction done by decltype depends on the form of its given expression whereas auto 
+    is limited to defining the type of a variable for which there is an initializer. decltype is a broader construct that,
+    at the cost of extra information, will infer the type of an expression.  
+
+    int i = 0, &r = i;
+
+    // same
+    auto a = i;
+    decltype(i) b = i;
+
+    // different "c" will be int "d" will be int&
+    auto c = r;
+    decltype(r) d = r;    */
