@@ -553,3 +553,251 @@ Exercise 2.36: In the following code, determine the type of each variable and th
     // different "c" will be int "d" will be int&
     auto c = r;
     decltype(r) d = r;    */
+
+
+/* ----------------------------------------Section 2.6.1-----------------------------------------------------
+
+Exercise 2.39: Compile the following program to see what happens when you forget the semicolon after a class definition. 
+Remember the message for future reference.
+struct Foo { // empty  }      // Note: no semicolon
+int main()
+{
+return 0;
+}       */
+
+//  Error message-> error: expected ';' after struct definition.
+
+
+//  Exercise 2.40: Write your own version of the Sales_data class.  
+
+// struct Sales_data 
+// {
+//     std::string isbn;
+//     std::string bookName;
+//     unsigned unitsSold = 0;
+//     double price = 0.0;
+// };
+
+
+/* ----------------------------------------Section 2.6.2-----------------------------------------------------
+
+Exercise 2.41: Use your Sales_data class to rewrite the exercises in § 1.5.1 (p. 22), § 1.5.2 (p. 24), and § 1.6 (p. 25). 
+For now, you should define your Sales_data class in the same file as your main function.    */
+
+//  1.5.1
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// struct Sales_data
+// {
+//     string isbn;
+//     unsigned unitSold=0;
+//     double price=0.0;
+//     double revenue=0.0; 
+// };
+// int main()
+// {
+//     Sales_data item;
+//     cout << "Enter the ISBN, units sold and price of the book:" << endl;
+//     cin >> item.isbn >> item.unitSold >> item.price;
+//     item.revenue = item.unitSold * item.price;
+//     cout << "The ISBN, units sold, price of the book and total revenue is" << endl;
+//     cout << item.isbn << " " << item.unitSold << " " << item.price << " " << item.revenue;
+
+//     return 0;
+// }
+
+//  1.5.2
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// struct Sales_data
+// {
+//     string isbn;
+//     unsigned unitSold=0;
+//     double price=0.0;
+//     double revenue=0.0; 
+// };
+// int main()
+// {
+//     int count=1;
+//     double totalRevenue;
+//     Sales_data item1, item2;
+//     cout << "Enter the details of the books:"<<endl;
+//     cin >> item1.isbn >> item1.unitSold >> item1.price;
+//     cin >> item2.isbn >> item2.unitSold >> item2.price;
+//     item1.revenue = item1.unitSold * item1.price;
+//     item2.revenue = item2.unitSold * item2.price;
+//     if(item1.isbn == item2.isbn)
+//     {
+//         totalRevenue = item1.revenue + item2.revenue;
+//         count = item1.unitSold + item2.unitSold;
+//         cout << item1.isbn << " " << count << " " << totalRevenue << endl;
+
+//         if(count!=0)
+//         {
+//             cout << "Average price of the book " << totalRevenue/count;
+//         }
+//         else 
+//         {
+//             cout << "No Sales.";
+//         }
+//         return 0;
+//     }
+//     else 
+//     {
+//         cerr << "Data must refer to same ISBN. ";
+//         return -1;
+//     }
+// }
+
+// 1.6
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// struct Sales_data
+// {
+//     string isbn;
+//     unsigned unitSold=0;
+//     double price=0.0;
+//     double revenue=0.0; 
+// };
+// int main()
+// {
+//     Sales_data total;
+
+//     if(cin >> total.isbn >> total.unitSold >> total.price)
+//     {
+//         total.revenue = total.unitSold * total.price;
+//         Sales_data trans;
+//         while(cin >> trans.isbn >> trans.unitSold >> trans.price)
+//         {
+//             trans.revenue = trans.unitSold * trans.price;
+//             if(total.isbn == trans.isbn)
+//             {
+//                 total.unitSold += trans.unitSold;
+//                 total.revenue += trans.revenue;
+//             }
+//             else
+//             {
+//                 cout << total.isbn << " " << total.unitSold << " " << total.revenue << endl;
+
+//                 if(total.unitSold != 0)
+//                 {
+//                     cout << "Average price of the book: " << total.revenue/total.unitSold << endl;
+//                 }
+//                 else
+//                 {
+//                     cout << "No book sold!"; 
+//                 }
+//                 total.isbn = trans.isbn;
+//                 total.unitSold = trans.unitSold;
+//                 total.price = trans.price;
+//                 total.revenue = trans.revenue;
+//             }
+//         }
+//         return 0;
+//     }
+//     else 
+//     {
+//         cerr << "No input!";
+//         return -1;
+//     }
+// }
+
+
+/* ----------------------------------------Section 2.6.3-----------------------------------------------------
+
+Exercise 2.42: Write your own version of the Sales_data.h header and use it to rewrite the exercise from § 2.6.2 (p. 76). */
+
+//   1.5.1
+
+// #include<iostream>
+// #include<string>
+// #include "Sales_data.h"
+// using namespace std;
+// int main()
+// {
+// 	Sales_data book;
+// 	double price;
+// 	cin >> book.isbn >> book.unitSold >> price;
+// 	book.calRevenue(price);
+// 	book.print();
+
+// 	return 0;
+// }
+
+//  1.5.2
+
+// #include<iostream>
+// #include<string>
+// #include "Sales_data.h"
+// using namespace std;
+// int main()
+// {
+// 	Sales_data book1, book2;
+// 	double price1, price2;
+// 	cin >> book1.isbn >> book1.unitSold >> price1;
+// 	cin >> book2.isbn >> book2.unitSold >> price2;
+// 	book1.calRevenue(price1);
+// 	book2.calRevenue(price2);
+
+// 	if (book1.isbn == book2.isbn)
+// 	{
+// 		book1.addData(book2);
+// 		book1.print();
+
+// 		return 0;
+// 	}
+// 	else
+// 	{
+// 		cerr << "Data must refer to same ISBN" << endl;
+// 		return -1; // indicate failure
+// 	}
+// }
+
+//   1.6
+
+// #include<iostream>
+// #include<string>
+// #include "Sales_data.h"
+// using namespace std;
+// int main()
+// {
+//     Sales_data total;
+// 	double totalPrice;
+// 	if (cin >> total.isbn >> total.unitSold >> totalPrice)
+// 	{
+// 		total.calRevenue(totalPrice);
+// 		Sales_data trans;
+// 		double transPrice;
+
+// 		while (cin >> trans.isbn >> trans.unitSold >> transPrice)
+// 		{
+// 			trans.calRevenue(transPrice);
+// 			if (total.isbn == trans.isbn)
+// 			{
+// 				total.addData(trans);
+// 			}
+// 			else
+// 			{
+// 				total.print();
+// 				total.setData(trans);
+// 			}
+// 		}
+// 		total.print();
+
+// 		return 0;
+// 	}
+// 	else
+// 	{
+// 		cerr << "No data?!" << endl;
+// 		return -1; // indicate failure
+// 	}
+// }
