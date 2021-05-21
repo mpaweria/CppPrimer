@@ -65,7 +65,7 @@ Exercise 3.1: Rewrite the exercises from § 1.4.1 (p. 13) and § 2.6.2 (p. 76) w
 // }
 
 
-/*-------------------------------------------------3.1---------------------------------------
+/*-------------------------------------------------3.2.2---------------------------------------
 
 Exercise 3.2: Write a program to read the standard input a line at a time. Modify your program to read a word at a time.*/
 
@@ -189,6 +189,28 @@ Exercise 3.2: Write a program to read the standard input a line at a time. Modif
 //         }
 //     }
 //     cout << "The concatenated string is " << str << endl;
+
+//     return 0;
+// }
+
+
+/*-------------------------------------------------3.2.3---------------------------------------
+
+Exercise 3.6: Use a range for to change all the characters in a string to X.    */
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// int main()
+// {
+//     string str{"a simple string"};
+//     cout << "String: " << str << endl;
+//     for(auto &c : str)
+//     {
+//         c = 'X';
+//     }
+//     cout << "New string: " << str << endl;
 
 //     return 0;
 // }

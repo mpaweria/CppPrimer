@@ -1,2 +1,14 @@
+#include<iostream>
+#include<string>
+using namespace std;
 
-        // int *ip = i;
+int main()
+{
+    string str{"a simple string"};
+    cout << "String: " << str;
+    for(auto &c : str)
+    {
+        c = 'X';
+    }
+    cout << "New string: " << str;
+}
