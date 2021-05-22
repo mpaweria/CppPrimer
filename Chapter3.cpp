@@ -194,7 +194,7 @@ Exercise 3.2: Write a program to read the standard input a line at a time. Modif
 // }
 
 
-/*-------------------------------------------------3.2.3---------------------------------------
+/*-------------------------------------------------3.2.3--------------------------------------------------------------
 
 Exercise 3.6: Use a range for to change all the characters in a string to X.    */
 
@@ -214,3 +214,102 @@ Exercise 3.6: Use a range for to change all the characters in a string to X.    
 
 //     return 0;
 // }
+
+
+/*  Exercise 3.7: What would happen if you define the loop control variable in the previous exercise as type char? 
+    Predict the results and then change your program to use a char to see if you were right.    */
+
+/*  If c is changed from type &char to char, then, c is a copy of each character of string str, thus the assignment 
+    c = 'X' won't mutate str. As a result, after this for range statement, nothing changes. ie OUTPUT = a simple string. */
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// int main()
+// {
+//     string str{"a simple string"};
+//     cout << "String: " << str << endl;
+//     for(char c : str)
+//     {
+//         c = 'X';
+//     }
+//     cout << "New string: " << str << endl;
+
+//     return 0;
+// } 
+
+
+/*  Exercise 3.8: Rewrite the program in the first exercise, first using a while and again using a traditional for loop. 
+    Which of the three approaches do you prefer and why?    */
+
+/*  I personally prefer range based for loop because of its easy use and simeple syntax. There is no need to calculate 
+    the number of elements. If data type is not known then auto specifier can be used.    */
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// int main()
+// {
+//     string str{"a simple string"};
+//     cout << "String: " << str << endl;
+//     int i=0;
+//     while(i<str.size())     // using while loop
+//     {
+//         str[i] = 'X';
+//         i++;
+//     }
+//     cout << "New string using while loop: " << str << endl;
+
+//     for(i=0; i<str.size(); i++)        // using for loop
+//     {
+//         str[i] = 'Y';
+//     }
+//     cout << "New string using for loop: " << str << endl;
+
+//     return 0;
+// } 
+
+
+/*  Exercise 3.9: What does the following program do? Is it valid? If not, why not?
+    string s;
+    cout << s[0] << endl;   */
+
+/*  The given code is supposed to print the first element of the sting s. But as s is an empty string, the operation 
+    is invalid i.e undefined behaviour.     */
+
+
+/*  Exercise 3.10: Write a program that reads a string of characters including punctuation and writes what was read 
+    but with the punctuation removed.  */
+
+// #include<iostream>
+// #include<string>
+// #include<cctype>
+// using namespace std;
+
+// int main()
+// {
+//     string str;
+//     cout << "Enter a string with punctuations: ";
+//     getline(cin, str);
+
+//     for(auto c: str)
+//     {
+//         if(!ispunct(c))
+//         {
+//             cout << c;
+//         }
+//     }
+//     return 0;
+// }
+
+
+/*  Exercise 3.11: Is the following range for legal? If so, what is the type of c?
+    const string s = "Keep out!";
+    for (auto &c : s) { // ...  }     */
+
+/*  The type of c is const char&.
+    It depends on the code if the loop is legal or not.
+    Example:  cout << c;      // legal.
+              c = 'X';        // illegal as s is a const string.    */
