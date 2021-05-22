@@ -344,3 +344,41 @@ the definition does. For those that are not legal, explain why they are illegal.
     (e) v5 has 2 elements initalized to 10 and 42.
     (f) v6 has 10 elements default initialized i.e "".
     (g) v7 has 10 elements initialized to "hi".    */
+
+
+/*-------------------------------------------------3.3.2--------------------------------------------------------------
+
+Exercise 3.14: Write a program to read a sequence of ints from cin and store those values in a vector.  */
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main()
+// {
+//     vector<int> vec;
+//     int num;
+//     while(cin>>num)
+//     {
+//         vec.push_back(num);
+//     }
+//     return 0;
+// }
+
+
+/*  Exercise 3.15: Repeat the previous program but read strings this time.  */
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main()
+// {
+//     vector<string> vec;
+//     string str;
+//     while(cin>>str)
+//     {
+//         vec.push_back(str);
+//     }
+//     return 0;
+// }
