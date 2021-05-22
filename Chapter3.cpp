@@ -313,3 +313,34 @@ Exercise 3.6: Use a range for to change all the characters in a string to X.    
     It depends on the code if the loop is legal or not.
     Example:  cout << c;      // legal.
               c = 'X';        // illegal as s is a const string.    */
+
+
+/*-------------------------------------------------3.3.1--------------------------------------------------------------
+
+Exercise 3.12: Which, if any, of the following vector definitions are in error? For those that are legal, explain what 
+the definition does. For those that are not legal, explain why they are illegal.
+(a) vector<vector<int>> ivec;
+(b) vector<string> svec = ivec;
+(c) vector<string> svec(10, "null");    */
+
+/*  (a) Legal: ivec is a vector of vectors storing variable of int type.
+    (b) Illegal: svec is a string vector can't be a copy of int vector (different types).
+    (c) Legal: svec is a vector containing 10 strings initializes to "none".    */ 
+
+
+/*  Exercise 3.13: How many elements are there in each of the following vectors? What are the values of the elements?
+    (a) vector<int> v1;
+    (b) vector<int> v2(10);
+    (c) vector<int> v3(10, 42);
+    (d) vector<int> v4{10};
+    (e) vector<int> v5{10, 42};
+    (f) vector<string> v6{10};
+    (g) vector<string> v7{10, "hi"};    */
+
+/*  (a) v1 is an empty vector.
+    (b) v2 has 10 elements default initialized to 0.
+    (c) v3 has 10 elements initialized to 42.
+    (d) v4 has 1 element initialized to 10.
+    (e) v5 has 2 elements initalized to 10 and 42.
+    (f) v6 has 10 elements default initialized i.e "".
+    (g) v7 has 10 elements initialized to "hi".    */
