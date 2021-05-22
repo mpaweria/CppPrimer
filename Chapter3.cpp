@@ -382,3 +382,260 @@ Exercise 3.14: Write a program to read a sequence of ints from cin and store tho
 //     }
 //     return 0;
 // }
+
+
+/*-------------------------------------------------3.3.3--------------------------------------------------------------
+
+Exercise 3.16: Write a program to print the size and contents of the vectors from exercise 3.13. Check whether your 
+answers to that exercise were correct. If not, restudy § 3.3.1 (p. 97) until you understand why you were wrong.  */
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// int main()
+// {
+//     vector<int> v1;
+//     cout << "Size of v1 is: " << v1.size() << endl;
+//     if(!v1.empty())
+//     {
+//         for(auto i: v1)
+//         {
+//             cout << i << " ";
+//         }
+//         cout << endl;
+//     }
+//     else 
+//     {
+//         cout << "Vector v1 is empty." << endl;
+//     }
+
+//     vector<int> v2(10);
+//     cout << "Size of v2 is: " << v2.size() << endl;
+//     if(!v2.empty())
+//     {
+//         for(auto i: v2)
+//         {
+//             cout << i << " ";
+//         }
+//         cout << endl;
+//     }
+//     else 
+//     {
+//         cout << "Vector v2 is empty." << endl;
+//     }
+
+//     vector<int> v3(10, 42);
+//     cout << "Size of v3 is: " << v3.size() << endl;
+//     if(!v3.empty())
+//     {
+//         for(auto i: v3)
+//         {
+//             cout << i << " ";
+//         }
+//         cout << endl;
+//     }
+//     else 
+//     {
+//         cout << "Vector v3 is empty." << endl;
+//     }
+
+//     vector<int> v4{10};
+//     cout << "Size of v4 is: " << v4.size() << endl;
+//     if(!v4.empty())
+//     {
+//         for(auto i: v4)
+//         {
+//             cout << i << " ";
+//         }
+//         cout << endl;
+//     }
+//     else 
+//     {
+//         cout << "Vector v4 is empty." << endl;
+//     }
+
+//     vector<int> v5{10, 42};
+//     cout << "Size of v5 is: " << v5.size() << endl;
+//     if(!v5.empty())
+//     {
+//         for(auto i: v5)
+//         {
+//             cout << i << " ";
+//         }
+//         cout << endl;
+//     }
+//     else 
+//     {
+//         cout << "Vector v5 is empty." << endl;
+//     }
+
+//     vector<string> v6{10};
+//     cout << "Size of v6 is: " << v6.size() << endl;
+//     if(!v6.empty())
+//     {
+//         for(auto i: v6)
+//         {
+//             cout << i << " ";
+//         }
+//         cout << endl;
+//     }
+//     else 
+//     {
+//         cout << "Vector v6 is empty." << endl;
+//     }
+
+//     vector<string> v7{10, "hi"};
+//     cout << "Size of v7 is: " << v7.size() << endl;
+//     if(!v7.empty())
+//     {
+//         for(auto i: v7)
+//         {
+//             cout << i << " ";
+//         }
+//         cout << endl;
+//     }
+//     else 
+//     {
+//         cout << "Vector v7 is empty." << endl;
+//     }
+
+//     return 0;
+// }
+
+
+/*  Exercise 3.17: Read a sequence of words from cin and store the values a vector. After you’ve read all the words, 
+    process the vector and change each word to uppercase. Print the transformed elements, eight words to a line.  */
+
+// #include<iostream>
+// #include<string>
+// #include<vector>
+// #include<cctype>
+// using namespace std;
+
+// int main()
+// {
+//     vector<string> vec;
+//     string str;
+
+//     while(cin >> str)
+//     {
+//         vec.push_back(str);
+//     }
+//     for(auto &s: vec)
+//     {
+//         for(auto &i: s)
+//         {
+//             i = toupper(i);
+//         }
+//     }
+//     for(int i=0; i<vec.size(); i++)
+//     {
+//         if(i!=0 && i%8==0)
+//         {
+//             cout << endl;
+//         }
+//         cout << vec.at(i) << " ";
+//     }
+
+//     return 0;
+// }
+
+
+/*  Exercise 3.18: Is the following program legal? If not, how might you fix it?
+    vector<int> ivec;
+    ivec[0] = 42;   */
+
+/*  The given program is illgeal. As ivec is an empty vector, thus dereferencing 1st element of it will cause undefined 
+    behaviour.
+    Correction: 
+
+    vector<int> ivec{42};       // initializing 1st element to 42.      */
+
+
+/*  Exercise 3.19: List three ways to define a vector and give it ten elements, each with the value 42. 
+    Indicate whether there is a preferred way to do so and why.   */
+
+/*  vector<int> v1(10, 42);
+    vector<int> v2{42, 42, 42, 42, 42, 42, 42, 42, 42, 42};
+    vector<int> v3;
+    for(int i=0; i<10; i++)
+    {
+        v3.push_back(42);
+    }
+    The preferred approach is the 1st aproach, as its syntax is simple and easy to use. It is more conivinient to
+    initialize a lot to elements with the same initialzed value.  \*.
+
+
+/*  Exercise 3.20: Read a set of integers into a vector. Print the sum of each pair of adjacent elements. Change 
+your program so that it prints the sum of the first and last elements, followed by the sum of the second and 
+second-to-last, and so on.  */
+
+// PART 1
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main()
+// {
+//     vector<int> vec;
+//     int num=0, sum=0;
+//     while(cin>>num)
+//     {
+//         vec.push_back(num);
+//     }
+//     if(vec.empty())
+//     {
+//         cout << "Vector is empty!" << endl;
+//         return -1;
+//     }
+//     else if(vec.size()==1)
+//     {
+//         cout << "Vector has only 1 element." << endl;
+//         return -1;
+//     }
+//     else
+//     {
+//         for(int i=0; i<vec.size()-1; i++)
+//         {
+//             sum=vec[i]+vec[i+1];
+//             cout << "Sum of " << vec[i] << " + " << vec[i+1] << " is " << sum << endl;
+//         }
+//     }
+//     return 0;
+// }
+
+// PART 2
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main()
+// {
+//     vector<int> vec;
+//     int num=0, sum=0;
+//     while(cin>>num)
+//     {
+//         vec.push_back(num);
+//     }
+//     if(vec.size()==0)
+//     {
+//         cout << "Vector is empty!" << endl;
+//         return -1;
+//     }
+//     else if(vec.size()==1)
+//     {
+//         cout << "Vector has only 1 element." << endl;
+//         return -1;
+//     }
+//     else
+//     {
+//         for(int i=0; i<(vec.size()+1)/2; i++)
+//         {
+//             int n = vec.size()-1;
+//             sum=vec[i]+vec[n-i];
+//             cout << "Sum of " << vec[i] << " + " << vec[n-i] << " is " << sum << endl;
+//         }
+//     }
+//     return 0;
+// }
