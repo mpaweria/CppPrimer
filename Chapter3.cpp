@@ -639,3 +639,55 @@ second-to-last, and so on.  */
 //     }
 //     return 0;
 // }
+
+
+/*-------------------------------------------------3.4.1--------------------------------------------------------------
+
+Exercise 3.21: Redo the first exercise from § 3.3.3 (p. 105) using iterators.   */
+
+// #include<iostream>
+// #include<vector>
+// #include<string>
+// using namespace std;
+
+// void sizeElements(const vector<int> vec)
+// {
+//     cout << "Size of the vector is: " << vec.size() << endl <<"Elements are [";
+
+//     for(auto i = vec.cbegin(); i!=vec.cend(); i++)
+//     {
+//         cout << *i << (i != vec.end() - 1 ? "," : "");
+//     }
+//     cout << "]" << endl << endl;
+// }
+// void sizeElements(const vector<string> vec)
+// {
+//     cout << "Size of the vector is: " << vec.size() << endl <<"Elements are [";
+
+//     for(auto i = vec.cbegin(); i!=vec.cend(); i++)
+//     {
+//         cout << *i << (i != vec.end() - 1 ? "," : "");
+//     }
+//     cout << "]" << endl << endl;
+// }
+// int main()
+// {
+//     vector<int> v1;
+//     vector<int> v2(10);
+//     vector<int> v3(10, 42);
+//     vector<int> v4{ 10 };
+//     vector<int> v5{ 10, 42 };
+//     vector<string> v6{ 10 };
+//     vector<string> v7{ 10, "hi" };
+
+//     sizeElements(v1);
+//     sizeElements(v2);
+//     sizeElements(v3);
+//     sizeElements(v4);
+//     sizeElements(v5);
+//     sizeElements(v6);
+//     sizeElements(v7);
+
+//     return 0;
+// }
+
