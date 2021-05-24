@@ -728,24 +728,140 @@ Exercise 3.21: Redo the first exercise from § 3.3.3 (p. 105) using iterators.  
 /*  Exercise 3.23: Write a program to create a vector with ten int elements. Using an iterator, assign each element a 
     value that is twice its current value. Test your program by printing the vector.    */
 
-#include<iostream>
-#include<vector>
-using namespace std;
+// #include<iostream>
+// #include<vector>
+// using namespace std;
 
-int main()
-{
-    vector<int> vec;
-    int num, i=0;
-    while(i<10)
-    {
-        cin >> num;
-        vec.push_back(num);
-        i++;
-    }
-    cout << endl;
-    for(auto it=vec.begin(); it!=vec.end(); it++)
-    {
-        cout << (*it)*2 << " ";
-    }
-    return 0;
-}
+// int main()
+// {
+//     vector<int> vec;
+//     int num, i=0;
+//     while(i<10)
+//     {
+//         cin >> num;
+//         vec.push_back(num);
+//         i++;
+//     }
+//     cout << endl;
+//     for(auto it=vec.begin(); it!=vec.end(); it++)
+//     {
+//         cout << (*it)*2 << " ";
+//     }
+//     return 0;
+// }
+
+
+/*-------------------------------------------------3.4.1--------------------------------------------------------------
+
+Exercise 3.24: Redo the last exercise from § 3.3.3 (p. 105) using iterators.    */
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main()
+// {
+//     vector<int> vec;
+//     int n;
+
+//     while(cin>>n)
+//     {
+//         vec.push_back(n);
+//     }
+
+//     if(vec.empty())
+//     {
+//         cout << "Vector is empty." << endl;
+//         return -1;
+//     }
+//     else if(vec.size()==1)
+//     {
+//         cout << "There is only one element." << endl;
+//         return -1;
+//     }
+//     else
+//     {
+//         cout <<endl  << "Sum of adjacent elements:" <<endl;
+//         for(auto it=vec.begin(); it!=(vec.end()-1); it++)
+//         {
+//             cout << "Sum of " << *it << " and " << (*it)+1 << " is " << (*it)+((*it)+1) << endl;
+//         }
+
+//         cout <<endl << "Sum of pair of first and last elements:" <<endl;
+//         for(auto lft=vec.begin(), rht=(vec.end()-1); lft<rht;  lft++, rht--)
+//         {
+//             cout << "Sum of " << *lft << " and " << *rht << " is " << (*lft) + (*rht) << endl;
+//         }
+//     }
+//     return 0;
+// }
+
+
+/*  Exercise 3.25: Rewrite the grade clustering program from § 3.3.3 (p.104) using iterators instead of subscripts. */
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main()
+// {
+//     vector<int> grades (11);
+//     int grade;
+//     while(cin >> grade)
+//     {
+//         if(grade<=100)
+//         {
+//             ++(*(grades.begin()+grade/10));
+//         }
+//     }
+//     for(auto i: grades)
+//     {
+//         cout << i << " ";
+//     }
+//     return 0;
+// }
+
+
+/*  Exercise 3.26: In the binary search program on page 112, why did we write mid = beg + (end - beg) / 2; 
+    instead of mid = (beg + end) /2;?   */
+
+/*  Because the iterator of vector don't define the + operator between the two iterators. beg + end is illegal.
+    We can only use the subtraction between the two iterators.  */
+
+
+/*-------------------------------------------------3.5.1--------------------------------------------------------------
+
+Exercise 3.27: Assuming txt_size is a function that takes no arguments and returns an int value, which of the following
+definitions are illegal? Explain why.
+    unsigned buf_size = 1024;
+    (a) int ia[buf_size];
+    (b) int ia[4 * 7 - 14];
+    (c) int ia[txt_size()];
+    (d) char st[11] = "fundamental";    */
+
+/*  (a) Illegal, as buf_size is not a const variable (dimension value must be a constant expression).
+    (b) Legal.
+    (c) Illegal, dimension value must be a constant expression.
+    (d) Illegal, the string' size is 12 more than the dimension of array (11 literal, 1 null character).    */
+
+
+/*  Exercise 3.28: What are the values in the following arrays?
+        string sa[10];
+        int ia[10];
+        int main() {
+        string sa2[10];
+        int ia2[10];
+        }       */
+
+/*  Array sa has 10 empty strings.
+    Array ia has 10 elements containing 0.
+    Array sa2 has 10 empty strings.
+    Array ia2 has 10 undefined elements.    */
+
+
+/*  Exercise 3.29: List some of the drawbacks of using an array instead of a vector     */
+
+/*   Drawbacks of using arrays insead of vectors:
+    (a) Size is fixed at the compile time.
+    (b) Can't add elements at run time.
+    (c) Bug prone.    */
