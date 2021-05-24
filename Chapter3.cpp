@@ -691,3 +691,61 @@ Exercise 3.21: Redo the first exercise from § 3.3.3 (p. 105) using iterators.  
 //     return 0;
 // }
 
+
+/*  Exercise 3.22: Revise the loop that printed the first paragraph in text to instead change the elements in text that 
+    correspond to the first paragraph to all uppercase. After you’ve updated text, print its contents.  */
+
+// #include<iostream>
+// #include<string>
+// #include<vector>
+// #include<cctype>
+// using namespace std;
+
+// int main()
+// {
+//     vector<string> text;
+//     string line;
+//     while(getline(cin, line))
+//     {
+//         text.push_back(line);
+//     }
+//     for(auto it=text.begin(); it!=text.end() && !it->empty(); it++)
+//     {
+//         for(auto ch=it->begin(); ch!=it->end(); ch++)
+//         {
+//             if(isalpha(*ch))
+//             {
+//                 *ch = toupper(*ch);
+//             }
+//         }
+//         cout << *it << endl;
+//     }
+    
+//     return 0;
+// }
+
+
+/*  Exercise 3.23: Write a program to create a vector with ten int elements. Using an iterator, assign each element a 
+    value that is twice its current value. Test your program by printing the vector.    */
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    vector<int> vec;
+    int num, i=0;
+    while(i<10)
+    {
+        cin >> num;
+        vec.push_back(num);
+        i++;
+    }
+    cout << endl;
+    for(auto it=vec.begin(); it!=vec.end(); it++)
+    {
+        cout << (*it)*2 << " ";
+    }
+    return 0;
+}
