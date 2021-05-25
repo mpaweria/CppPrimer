@@ -751,7 +751,7 @@ Exercise 3.21: Redo the first exercise from § 3.3.3 (p. 105) using iterators.  
 // }
 
 
-/*-------------------------------------------------3.4.1--------------------------------------------------------------
+/*-------------------------------------------------3.4.2--------------------------------------------------------------
 
 Exercise 3.24: Redo the last exercise from § 3.3.3 (p. 105) using iterators.    */
 
@@ -865,3 +865,316 @@ definitions are illegal? Explain why.
     (a) Size is fixed at the compile time.
     (b) Can't add elements at run time.
     (c) Bug prone.    */
+
+
+/*-------------------------------------------------3.5.2--------------------------------------------------------------
+
+Exercise 3.30: Identify the indexing errors in the following code:
+    constexpr size_t array_size = 10;
+    int ia[array_size];
+    for (size_t ix = 1; ix <= array_size; ++ix)
+    ia[ix] = ix;    */
+
+/*  If ix is equal to 10, then ia[ix] is trying to derefence an element outside the range of the array, thus will show
+    undefined behaviour.    */
+
+
+/*  Exercise 3.31: Write a program to define an array of ten ints. Give each element the same value as its position 
+    in the array.   */
+
+// #include<iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int arr[10] = {};
+//     for(int i=0; i<10; i++)
+//     {
+//         arr[i]=i;
+//     }
+//     for(auto i: arr)
+//     {
+//         cout << i << " ";
+//     }
+//     return 0;
+// }
+
+
+/*  Exercise 3.32: Copy the array you defined in the previous exercise into another array. Rewrite your program to 
+    use vectors.    */
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main()
+// {
+//     //Using arrays
+//     int arr1[10] = {}, arr2[10];
+//     for(int i=0; i<10; i++)
+//     {
+//         arr1[i]=i;      
+//     }
+//     cout << "Array 1: ";
+//     for(auto i: arr1)
+//     {
+//         cout << i << " ";
+//     }
+//     cout << endl;
+
+//     cout << "Array 2: ";
+//     for(int i=0; i<10; i++)
+//     {
+//         arr2[i]=arr1[i];        
+//     }
+//     for(auto i: arr2)
+//     {
+//         cout << i << " ";
+//     }
+//     cout << endl;
+
+//     //Using vectors
+//     vector<int> vec1(10);
+
+//     cout << "Vector 1: ";
+//     for(int i=0; i<10; i++)
+//     {
+//         vec1[i]=arr1[i];        
+//     }
+//     for(auto i: vec1)
+//     {
+//         cout << i << " ";
+//     }
+//     cout << endl;
+
+//     vector<int> vec2(vec1);     //Copying vector 1 in vector 2.
+
+//     cout << "Vector 2: ";
+//     for(auto i: vec2)
+//     {
+//         cout << i << " ";
+//     }
+
+//     return 0;
+// }
+
+
+/*  Exercise 3.33: What would happen if we did not initialize the scores array in the program on page 116?  */
+
+//  The scores array will store garbage values, if not ititialized.
+
+
+/*-------------------------------------------------3.5.3--------------------------------------------------------------
+
+Exercise 3.34: Given that p1 and p2 point to elements in the same array, what does the following code do? Are there 
+values of p1 or p2 that make this code illegal?
+    p1 += p2 - p1;      */
+
+/*  The given code will make p1 and p2 point to the same element in the array.
+    For every legal value of p1 and p2, this code is always legal.    */
+
+
+/*  Exercise 3.35: Using pointers, write a program to set the elements in an array to zero.   */
+
+// #include<iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int size = 10;
+//     int arr[size];
+
+//     for(int *p=arr; p!=arr+size; p++)
+//     {
+//         *p=0;
+//     }
+//     for(auto i: arr)
+//     {
+//         cout << i <<" ";
+//     }
+// }
+
+
+/*  Exercise 3.36: Write a program to compare two arrays for equality. Write a similar program to compare two vectors.  */
+
+// #include<iostream>
+// #include<vector>
+// #include<iterator>
+// using namespace std;
+
+// bool compare(int arr1[], int arr1Size, int arr2[], int arr2Size)
+// {
+//     if(arr1Size != arr2Size)
+//     {
+//         return false;
+//     }
+//     for(int i=0; i<arr1Size; i++)
+//     {
+//         if(arr1[i]!=arr2[i])
+//         {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// int main()
+// {
+//     int arr1[]={2,4,6,8,10}, arr2[]={2,4,6,8,10};
+//     int arr1Size = sizeof(arr1)/sizeof(arr1[0]);
+//     int arr2Size = sizeof(arr2)/sizeof(arr2[0]);
+
+//     if(compare(arr1, arr1Size, arr2, arr2Size))
+//     {
+//         cout << "Arrays are equal." << endl;
+//     }
+//     else
+//     {
+//         cout << "Arrays are not equal." << endl;
+//     }
+
+//     vector<int> vec1 {1,2,3,4,5};
+//     vector<int> vec2 {1,2,3,4,5};
+
+//     if(vec1==vec2)
+//     {
+//         cout << "Vectors are equal." << endl;
+//     }
+//     else
+//     {
+//         cout << "Vectors are not equal." << endl;
+//     }
+
+//     return 0;
+// }
+
+
+/*-------------------------------------------------3.5.4--------------------------------------------------------------
+
+Exercise 3.37: What does the following program do?
+    const char ca[] = {'h', 'e', 'l', 'l', 'o'};
+    const char *cp = ca;
+    while (*cp) {
+    cout << *cp << endl;
+    ++cp;
+    }       */
+
+/* The following program will first print the character array ca i.e hello then it will start printing garbage values
+    as there is no null character appended in the array, thus the loop will not be terminated as expected leading to 
+    undefined behaviour.    */
+
+
+/*  Exercise 3.38: In this section, we noted that it was not only illegal but meaningless to try to add two pointers. 
+    Why would adding two pointers be meaningless?   */
+
+/*  Pointers contain addresses. Adding two addresses makes no sense, because you have no idea what you would point to.
+    Subtracting two addresses lets you compute the offset between these two addresses, which may be very useful 
+    in some situations.     */
+
+/*  Exercise 3.39: Write a program to compare two strings. Now write a program to compare the values of two 
+    C-style character strings.  */
+
+// #include<iostream>
+// #include<string>
+// #include<cstring>
+// using namespace std;
+
+// int main()
+// {
+//     string str1 = "Hi, I'm string one.", str2 = "Hi, I'm string two.";
+
+//     if(str1==str2)
+//     {
+//         cout << "Strings are equal." << endl;
+//     }
+//     else if(str1<str2)
+//     {
+//         cout << "\"" << str1 << "\"" << " is less than " << "\"" << str2 << "\"" << endl;
+//     }
+//     else
+//     {
+//         cout << "\"" << str2 << "\"" << " is less than " << "\"" << str1 << "\"" << endl;
+//     }
+
+//     const char *c1 = "Hi, I'm C-style string one.", *c2 = "Hi, I'm C-style string two.";
+
+//     auto result = strcmp(c1, c2);
+
+//     if(result==0)
+//     {
+//         cout << "Strings are equal." << endl;
+//     }
+//     else if(result < 0)
+//     {
+//         cout << "\"" << c1 << "\"" << " is less than " << "\"" << c2 << "\"" << endl;
+//     }
+//     else
+//     {
+//         cout << "\"" << c2 << "\"" << " is less than " << "\"" << c1 << "\"" << endl;
+//     }
+
+//     return 0;
+// }
+
+
+/*  Exercise 3.40: Write a program to define two character arrays initialized from string literals. Now define a 
+    third character array to hold the concatenation of the two arrays. Use strcpy and strcat to copy the two arrays 
+    into the third.     */
+
+// #include<iostream>
+// #include<cstring>
+// using namespace std;
+
+// int main()
+// {
+//     const char str1[] = "String 1", str2[] = "String 2";
+//     char longStr[30];
+//     strcpy(longStr, str1);
+//     strcat(longStr, " ");
+//     strcat(longStr, str2);
+
+//     cout << longStr;
+// }
+
+
+/*-------------------------------------------------3.5.5--------------------------------------------------------------
+
+Exercise 3.41: Write a program to initialize a vector from an array of ints.    */
+
+// #include<iostream>
+// #include<vector>
+// #include<iterator>
+// using namespace std;
+
+// int main()
+// {
+//     int arr[] = {1,2,3,4,5};
+//     vector<int> vec(begin(arr), end(arr));
+//     for(int i: vec)
+//     {
+//         cout << i << " ";
+//     }
+//     return 0;
+// }
+
+
+/*  Exercise 3.42: Write a program to copy a vector of ints into an array of ints.  */
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main()
+// {
+//     const vector<int> vec{6,7,8,9,10};
+//     int arr[vec.size()]={};
+
+//     for(int i=0; i<vec.size(); i++)
+//     {
+//         arr[i]=vec[i];
+//     }
+//     for(int i: arr)
+//     {
+//         cout << i << " ";
+//     }
+//     return 0;
+// }

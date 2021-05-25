@@ -1,27 +1,54 @@
 #include<iostream>
-#include<string>
 #include<vector>
-#include<cctype>
 using namespace std;
 
 int main()
 {
-    vector<string> text;
-    string line;
-    while(cin>>line)
+    //Using arrays
+    int arr1[10] = {}, arr2[10];
+    for(int i=0; i<10; i++)
     {
-        text.push_back(line);
+        arr1[i]=i;      
     }
-    for(auto it=text.begin(); it!=text.end() && !it->empty(); it++)
+    cout << "Array 1: ";
+    for(auto i: arr1)
     {
-        for(auto ch=it->begin(); ch!=it->end(); ch++)
-        {
-            if(isalpha(*ch))
-            {
-                *ch = isupper(*ch);
-            }
-        }
-        cout << *it << endl;
+        cout << i << " ";
     }
+    cout << endl;
+
+    cout << "Array 2: ";
+    for(int i=0; i<10; i++)
+    {
+        arr2[i]=arr1[i];        
+    }
+    for(auto i: arr2)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+
+    //Using vectors
+    vector<int> vec1(10);
+
+    cout << "Vector 1: ";
+    for(int i=0; i<10; i++)
+    {
+        vec1[i]=arr1[i];        
+    }
+    for(auto i: vec1)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+
+    vector<int> vec2(vec1);     //Copying vector 1 in vector 2.
+
+    cout << "Vector 2: ";
+    for(auto i: vec2)
+    {
+        cout << i << " ";
+    }
+
     return 0;
 }
