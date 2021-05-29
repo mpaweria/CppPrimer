@@ -91,3 +91,45 @@ Exercise 4.8: Explain when operands are evaluated in the logical AND, logical OR
 //  Exercise 4.12: Assuming i, j, and k are all ints, explain what i != j < k means.
     
 //  i != j < k means i!=(j<k) --> i != 0 or 1.
+
+
+/*----------------------------------------------------4.4-------------------------------------------------------------
+
+Exercise 4.13: What are the values of i and d after each
+assignment?
+    int i; double d;
+    (a) d = i = 3.5;
+    (b) i = d = 3.5;    */
+
+/*  (a) i=3, d=3.0
+    (b) d=3.5, i=3     */
+
+
+/*  Exercise 4.14: Explain what happens in each of the if tests:
+    if (42 = i) // ...
+    if (i = 42) // ...  */
+
+/*  if(42=i)    // Error: as lvalue is required on the left hand side of the assignment operator.
+    if(i=42)    // 42 is assigned to i, i.e the condition is true and the body of the condition is executed.    /*
+
+
+/*  Exercise 4.15: The following assignment is illegal. Why? How would you correct it?
+    double dval; int ival; int *pi;
+    dval = ival = pi = 0;     */
+
+/*  The following code is illegal because pi and ival has different types and can't be converted to one another.
+    Error: invalid conversion from ‘int*’ to ‘int’.
+    Correction: dval = ival = 0;
+                pi = 0;     */
+
+
+/*  Exercise 4.16: Although the following are legal, they probably do not behave as the programmer expects. Why? 
+    Rewrite the expressions as you think they should be.
+    (a) if (p = getPtr() != 0)
+    (b) if (i = 1024)   */
+
+/*  (a) The if condition will check if getPtr() and 0 are equal or not and then the result of the test would be 
+        assigned to i, which is not intended.
+        if((p=getPtr()) != 0)
+    (b) 1024 is assigned to i.
+        if(i == 1024)   */
