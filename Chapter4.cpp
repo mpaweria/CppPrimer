@@ -133,3 +133,31 @@ assignment?
         if((p=getPtr()) != 0)
     (b) 1024 is assigned to i.
         if(i == 1024)   */
+
+
+/*----------------------------------------------------4.5-------------------------------------------------------------
+
+Exercise 4.17: Explain the difference between prefix and postfix increment.    */
+
+/*  Postfix increment or decrement operator means the expression is evaluated first using the original value of the 
+    variable and then the variable is incremented or decremented.
+    Prefix increment or decrement operator means the variable is incremented first and then the expression is evaluated
+    using the new value of the variable.    */
+
+
+/*  Exercise 4.18: What would happen if the while loop on page 148 that prints the elements from a vector used the 
+    prefix increment operator?      */
+
+//  It will print from the second element and dereference v.end() at last, which is a Undefined Behaviour.
+
+
+/*  Exercise 4.19: Given that ptr points to an int, that vec is a vector<int>, and that ival is an int, explain the 
+    behavior of each of these expressions. Which, if any, are likely to be incorrect? Why? How might each be corrected?
+    (a) ptr != 0 && *ptr++
+    (b) ival++ && ival
+    (c) vec[ival++] <= vec[ival]    */
+
+/*  (a) Checks if ptr is not equal to 0 and checks the pointer value.
+    (b) Checks whether the value of ival and ival+1 is equal to 0.
+    (c) Inncorrect: Undefined Behaviour.
+        Correction: vec[ival] <= vec[ival+1];   */
