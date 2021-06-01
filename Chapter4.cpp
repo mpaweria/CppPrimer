@@ -163,7 +163,7 @@ Exercise 4.17: Explain the difference between prefix and postfix increment.    *
         Correction: vec[ival] <= vec[ival+1];   */
 
 
-/*----------------------------------------------------4.5-------------------------------------------------------------
+/*----------------------------------------------------4.6-------------------------------------------------------------
 
 Exercise 4.20: Assuming that iter is a vector<string>::iterator, indicate which, if any, of the following expressions 
 are legal. Explain the behavior of the legal expressions and why those that aren’t legal are in error.
@@ -180,3 +180,77 @@ are legal. Explain the behavior of the legal expressions and why those that aren
     (d) iter->empty();  // indicate the iter' value whether empty.
     (e) ++*iter;        // illegal, string have not increment.
     (f) iter++->empty();  // return iter->empty(), then ++iter.     */
+
+
+/*----------------------------------------------------4.7-------------------------------------------------------------
+
+Exercise 4.21: Write a program to use a conditional operator to find the elements in a vector<int> that have odd value 
+and double the value of each such element.    */
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main()
+// {
+//     vector<int> vec {1,2,3,4,5,6};
+
+//     for(auto i: vec)
+//     {
+//         cout << ((i%2==1) ? i*2 : i) << " ";
+//     }
+//     return 0;
+// }
+
+
+/*  Exercise 4.22: Extend the program that assigned high pass, pass, and fail grades to also assign low pass for grades
+    between 60 and 75 inclusive. Write two versions: One version that uses only conditional operators; the other should 
+    use one or more if statements. Which version do you think is easier to understand and why?  */
+
+// #include<iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int grade;
+//     cout << "Enter the grade: ";
+//     cin >> grade;
+
+//     // using conditional statement
+//     cout << ((grade > 90) ? "High Pass" : (grade > 75) ? "Pass" : (grade > 60) ? "Low Pass" : "Fail") << endl;
+    
+//     // using if else condition
+//     if(grade > 90)
+//         cout << "High Pass";
+//     else if(grade > 75)
+//         cout << "Pass";
+//     else if(grade > 60)
+//         cout << "Low Pass";
+//     else 
+//         cout << "Fail";
+
+//     return 0;
+// }
+
+/*  If else conditions are easier to understand because they are more clear with proper indendation as compared to 
+    nested conditional operators.   */
+
+
+/*  Exercise 4.23: The following expression fails to compile due to operator precedence. Using Table 4.12 (p. 166), 
+    explain why it fails. How would you fix it?
+    string s = "word";
+    string pl = s + s[s.size() - 1] == 's' ? "" : "s" ;     */
+
+/*  The given expression fails because the precedence of + is greater than the conditional operator (?:).
+    Correction: 
+    string pl = s + (s[s.size() - 1] == 's' ? "" : "s");    */
+
+
+/*  Exercise 4.24: Our program that distinguished between highpass, pass, and fail depended on the fact that the 
+    conditional operator is right associative. Describe how that operator would be evaluated if the operator were 
+    left associative.   */
+
+/*  If the ternary operator would be left associative then the grade program would have been evaluated as:
+    
+    finalgrade = ((grade > 90) ? "high pass" : (grade < 60)) ? "fail" : "pass";
+    Error: operands to ?: have different types 'const char*' and 'bool'     */
