@@ -254,3 +254,142 @@ and double the value of each such element.    */
     
     finalgrade = ((grade > 90) ? "high pass" : (grade < 60)) ? "fail" : "pass";
     Error: operands to ?: have different types 'const char*' and 'bool'     */
+
+
+/*----------------------------------------------------4.8-------------------------------------------------------------
+
+Exercise 4.25: What is the value of ~'q' << 6 on a machine with 32-bit ints and 8 bit chars, that uses Latin-1 character
+set in which 'q' has the bit pattern 01110001?     */
+
+/*  q = 00000000 00000000 00000000 01110001
+    ~q = 11111111 11111111 11111111 10001110
+    ~q << 6 = 11111111 11111111 11100011 10000000  */
+
+
+// Exercise 4.26: In our grading example in this section, what would happen if we used unsigned int as the type for quiz1?
+
+/*  The C++ standard does not specify the size of integral types in bytes, but it specifies minimum ranges they must be 
+    able to hold. The minimum range of unsigned int is 0 to 65535. Since some implementations use only the minimum 16 
+    bits for unsigned int, this could cause undefined behavior.   */
+
+
+/*  Exercise 4.27: What is the result of each of these expressions?
+    unsigned long ul1 = 3, ul2 = 7;
+    (a) ul1 & ul2
+    (b) ul1 | ul2
+    (c) ul1 && ul2
+    (d) ul1 || ul2    */
+
+/*  ul1 = 3 = 0011, ul2 = 7 = 0111
+    (a) ul1 & ul2 = 0011 = 3
+    (b) ul1 | ul2 = 0111 = 7
+    (c) ul1 && ul2 = true (as both the values non-zero)
+    (d) ul1 || ul2 = true   */
+
+
+/*----------------------------------------------------4.9-------------------------------------------------------------
+
+Exercise 4.28: Write a program to print the size of each of the builtin types.    */
+
+// #include<iostream>
+// using namespace std;
+
+// int main()
+// {
+// 	// void type
+// 	cout << "void: nullptr_t\t" << sizeof(std::nullptr_t) << " bytes" << endl << endl;
+
+// 	// boolean type
+// 	cout << "bool:\t\t" << sizeof(bool) << " bytes" << endl << endl;
+
+// 	// charactor type
+// 	cout << "char:\t\t" << sizeof(char) << " bytes" << endl;
+// 	cout << "wchar_t:\t" << sizeof(wchar_t) << " bytes" << endl;
+// 	cout << "char16_t:\t" << sizeof(char16_t) << " bytes" << endl;
+// 	cout << "char32_t:\t" << sizeof(char32_t) << " bytes" << endl << endl;
+
+// 	// integers type
+// 	cout << "short:\t\t" << sizeof(short) << " bytes" << endl;
+// 	cout << "int:\t\t" << sizeof(int) << " bytes" << endl;
+// 	cout << "long:\t\t" << sizeof(long) << " bytes" << endl;
+// 	cout << "long long:\t" << sizeof(long long) << " bytes" << endl << endl;
+
+// 	// floating point type
+// 	cout << "float:\t\t" << sizeof(float) << " bytes" << endl;
+// 	cout << "double:\t\t" << sizeof(double) << " bytes" << endl;
+// 	cout << "long double:\t" << sizeof(long double) << " bytes" << endl << endl;
+
+// 	// Fixed width integers
+// 	cout << "int8_t:\t\t" << sizeof(int8_t) << " bytes" << endl;
+// 	cout << "uint8_t:\t" << sizeof(uint8_t) << " bytes" << endl;
+// 	cout << "int16_t:\t" << sizeof(int16_t) << " bytes" << endl;
+// 	cout << "uint16_t:\t" << sizeof(uint16_t) << " bytes" << endl;
+// 	cout << "int32_t:\t" << sizeof(int32_t) << " bytes" << endl;
+// 	cout << "uint32_t:\t" << sizeof(uint32_t) << " bytes" << endl;
+// 	cout << "int64_t:\t" << sizeof(int64_t) << " bytes" << endl;
+// 	cout << "uint64_t:\t" << sizeof(uint64_t) << " bytes" << endl;
+
+// 	return 0;
+// }
+
+
+/*  Exercise 4.29: Predict the output of the following code and explain your reasoning. Now run the program. Is the 
+    output what you expected? If not, figure out why.
+    int x[10]; int *p = x;
+    cout << sizeof(x)/sizeof(*x) << endl;
+    cout << sizeof(p)/sizeof(*p) << endl;   */
+
+/*  The first result is 10. It returns the number of elements in x. But the second result depends on your machine. 
+    It would be 2 on the 64-bit machine and 1 on the 32-bit machine. Because of the size of pointer is different 
+    on various machines.    */
+
+
+/*  Exercise 4.30: Using Table 4.12 (p. 166), parenthesize the following expressions to match the default evaluation:
+    (a) sizeof x + y
+    (b) sizeof p->mem[i]
+    (c) sizeof a < b
+    (d) sizeof f()    */
+
+/*  (a) (sizeof x) + y
+    (b) sizeof (p->mem[i])
+    (c) (sizeof a) < b
+    (d) sizeof f()  
+        If `f()` returns `void`, this statement is undefined, otherwise it returns the size of return type.   */
+
+
+/*----------------------------------------------------4.10-------------------------------------------------------------
+
+Exercise 4.31: The program in this section used the prefix increment and decrement operators. Explain why we used 
+prefix and not postfix. What changes would have to be made to use the postfix versions? Rewrite the program using 
+postfix operators.   */
+
+/*  We use prefix and not postfix, just because of the Advice: Use Postfix Operators only When Necessary on §4.5. 
+    Increment and Decrement Operators. Prefix increment and decrement are faster, more efficient and easily it is 
+    easier to implement evaluation in them as compared to postfix.    
+    
+    for(vector<int>::size_type ix = 0; ix != ivec.size(); ix++, cnt--)  
+    ivec[ix] = cnt;     */
+
+
+/*  Exercise 4.32: Explain the following loop. 
+    constexpr int size = 5;
+    int ia[size] = {1,2,3,4,5};
+    for (int *ptr = ia, ix = 0;
+    ix != size && ptr != ia+size;
+    ++ix, ++ptr) { // ...  }        */
+
+/*  ptr and ix have the same function. The former use a pointer, and the latter use the index of array. we use the 
+    loop to through the array.(just choose one from ptr and ix)    */
+
+
+/*  Exercise 4.33: Using Table 4.12 (p. 166) explain what the following expression does:
+    someValue ? ++x, ++y : --x, --y     */
+
+/*  Because of the most lowest precedence of the comma operator, the expression is same as:
+    (someValue ? ++x, ++y : --x), --y
+
+    If someValue is true, then ++x, and the result is y, if someValue is false, then --x, and the result is --y. so 
+    it is also same as:
+    someValue ? (++x, y) : (--x, --y);
+
+    Even though the result has nothing to do with x, the evaluation of someValue does effect the operation on x.    */
