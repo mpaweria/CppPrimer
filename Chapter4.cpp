@@ -393,3 +393,31 @@ postfix operators.   */
     someValue ? (++x, y) : (--x, --y);
 
     Even though the result has nothing to do with x, the evaluation of someValue does effect the operation on x.    */
+
+
+/*----------------------------------------------------4.11.1-----------------------------------------------------------
+
+Exercise 4.34: Given the variable definitions in this section, explain what conversions take place in the following expressions:
+    (a) if (fval)
+    (b) dval = fval + ival;
+    (c) dval + ival * cval;     */
+
+/*  (a) fval is converted to bool.
+    (b) ival is converted to float and then the float and fval are converted to double.
+    (c) cval is converted to int and then the int and ival are converted to double.    */
+
+
+/*  Exercise 4.35: Given the following definitions,
+    char cval; int ival; unsigned int ui;
+    float fval; double dval;
+    identify the implicit type conversions, if any, taking place:
+    (a) cval = 'a' + 3;
+    (b) fval = ui - ival * 1.0;
+    (c) dval = ui * fval;
+    (d) cval = ival + fval + dval;     */
+
+/*  (a) a is converted to int and then the result of (a+3) is converted to char.
+    (b) ival and ui are converted to double and then the double is converted to float.
+    (c) ui i converted to float and then the result is converted to double.
+    (d) ival is converted to float and and then this float and fval are converted to double and the result of 
+    (ival + fval + dval) is converted to char.   */
