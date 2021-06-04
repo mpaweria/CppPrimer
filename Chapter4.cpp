@@ -421,3 +421,31 @@ Exercise 4.34: Given the variable definitions in this section, explain what conv
     (c) ui i converted to float and then the result is converted to double.
     (d) ival is converted to float and and then this float and fval are converted to double and the result of 
     (ival + fval + dval) is converted to char.   */
+
+
+
+/*----------------------------------------------------4.11.3-----------------------------------------------------------
+
+Exercise 4.36: Assuming i is an int and d is a double write the expression i *= d so that it does integral, rather 
+than floatingpoint, multiplication.    */
+
+//   i *= static_cast<int>d;
+
+
+/*  Exercise 4.37: Rewrite each of the following old-style casts to use a named cast:
+    int i; double d; const string *ps; char pc; void pv;
+    (a) pv = (void*)ps;
+    (b) i = int(*pc);
+    (c) pv = &d;
+    (d) pc = (char*) pv;    */
+
+/*  (a) pv = const_cast<string*>ps;
+    (b) i = static_cast<int>(*pc);
+    (c) pv = static_cast<void*>&d;
+    (d) pc = static_cast<char*>pv;    */
+
+
+/*  Exercise 4.38: Explain the following expression:
+    double slope = static_cast<double>(j/i);    */
+
+//  j/i is explicitly converted to double and assigned to slope.
