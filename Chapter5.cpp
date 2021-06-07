@@ -457,4 +457,255 @@ Exercise 5.9: Write a program using a series of if statements to count the numbe
     case kval:
         bufsize = kval * sizeof(int);
         break;
+    }       */
+
+
+
+/*----------------------------------------------------5.4.1------------------------------------------------------------
+
+Exercise 5.14: Write a program to read strings from standard input looking for duplicated words. The program should find
+places in the input where one word is followed immediately by itself. Keep track of the largest number of times a single
+repetition occurs and which word is repeated. Print the maximum number of duplicates, or else print a message saying
+that no word was repeated. For example, if the input is
+    how now now now brown cow cow
+the output should indicate that the word now occurred three times.    */
+
+// #include<iostream>
+// using namespace std;
+
+// int main()
+// {
+//     string word, prev, repeatedWord;
+//     int count = 1, maxCount = 0;
+//     while(cin >> word)
+//     {
+//         if(word==prev)
+//         {
+//             count++;
+//         }
+//         else
+//         {
+//             prev=word;
+//             count=1;
+//         }
+//         if(count > maxCount)
+//         {
+//             maxCount = count;
+//             repeatedWord = prev;
+//         }
+//     }
+//     if(maxCount == 1)
+//         cout << "No word is repeated.";
+//     else
+//         cout << repeatedWord << " occured " << maxCount << " times."; 
+
+//     return 0;
+// }
+
+
+
+/*----------------------------------------------------5.4.2------------------------------------------------------------
+
+Exercise 5.15: Explain each of the following loops. Correct any problems you detect.
+(a) for (int ix = 0; ix != sz; ++ix) { // . . .  }
+if (ix != sz)
+// . . .
+(b) int ix;
+for (ix != sz; ++ix) { // . . .  }
+(c) for (int ix = 0; ix != sz; ++ix, ++ sz) { // . . .  }       */
+
+/*  (a) Error: the variable ix is declared inside the for loop, so it cannot be accessed out of the scope of the loop.
+        Correction:
+        int ix; 
+        for (ix = 0; ix != sz; ++ix) { // . . .  }
+        if (ix != sz)
+        // . . .
+
+    (b) Error: the init statement is missing.
+        Correction:
+        int ix;
+        for (;ix != sz; ++ix) { // . . .  }
+
+    (c) Error: as sz variable is also incrementing, the loop will never terminate.
+        Correction:
+        for (int ix = 0; ix != sz; ++ix) { // . . .  }     */
+
+
+/*  Exercise 5.16: The while loop is particularly good at executing whilesome condition holds; for example, when we 
+    need to read values until end-of-file. The for loop is generally thought of as a step loop: An index steps through 
+    a range of values in a collection. Write an idiomatic use of each loop and then rewrite each using the other loop
+    construct. If you could use only one loop, which would you choose? Why?     */
+
+/*  // while idiomatic
+    int i;
+    while ( cin >> i )
+        // ...
+
+    // same as for
+    for (int i = 0; cin >> i;)
+        // ...
+
+    // for idiomatic
+    for (int i = 0; i != size; ++i)
+        // ...
+
+    // same as while
+    int i = 0;
+    while (i != size)
+    {
+        // ...
+        ++i;
     }
+
+    If I could use only one loop, then I would choose for loop over while loop because of its readability. A For loop 
+    is a lot cleaner and a lot nicer to look at. It's also much easier to get stuck in an infinite loop with a while 
+    loop.   */
+
+
+/*  Exercise 5.17: Given two vectors of ints, write a program to determine whether one vector is a prefix of the other. 
+    For vectors ofunequal length, compare the number of elements of the smaller vector. For example, given the vectors 
+    containing 0, 1, 1, and 2 and 0, 1, 1, 2, 3, 5, 8, respectively your program should return true.    */
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main()
+// {
+//     vector<int> vec1 {0, 1, 1, 2};
+//     vector<int> vec2 {0, 1, 1, 2, 3, 5, 8};
+//     int flag = 1, size = 0;
+
+//     if(vec1.size() < vec2.size())
+//         size = vec1.size();
+//     else
+//         size = vec2.size();
+
+//     for(int i=0; i<size; i++)
+//     {
+//         if(vec1[i]!=vec2[i])
+//         {
+//             flag = 0;
+//             break;
+//         }
+//     }
+//     if(flag==1)
+//         cout << "True";
+//     else
+//         cout << "False";
+//     return 0;
+// }
+
+
+/*----------------------------------------------------5.4.4------------------------------------------------------------
+
+Exercise 5.18: Explain each of the following loops. Correct any problems you detect.
+(a) do
+int v1, v2;
+cout << "Please enter two numbers to sum:" ;
+if (cin >> v1 >> v2)
+cout << "Sum is: " << v1 + v2 << endl;
+while (cin);
+(b) do {
+// . . .
+} while (int ival = get_response());
+(c) do {
+int ival = get_response();
+} while (ival);     */
+
+/*  (a) Error: brackets missing.
+        Correction: 
+        do
+        {
+            int v1, v2;
+            cout << "Please enter two numbers to sum:" ;
+            if (cin >> v1 >> v2)
+            cout << "Sum is: " << v1 + v2 << endl;
+        }
+        while (cin);
+
+    (b) Error: ival is declared inside the condition of while loop.
+        Correction:
+        int ival;
+        do 
+        {
+            // . . .
+        } 
+        while (ival = get_response());
+
+    (c) Error: ival not declared int the scope of while.
+        Correction:
+        int ival;
+        do 
+        {
+            ival = get_response();
+        } while (ival);     */
+
+    
+/*  Exercise 5.19: Write a program that uses a do while loop to repetitively request two strings from the user and 
+    report which string is less than the other.     */
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// int main()
+// {
+//     string str1, str2, more;
+//     do
+//     {
+//         cout << "Enter 2 strings: ";
+//         cin >> str1 >> str2;
+
+//         if(str1==str2)
+//             cout << "Both the strings are equal." << endl << endl;
+//         else if(str1>str2)
+//             cout << str1 << " is greater than " << str2 << endl << endl;
+//         else
+//             cout << str2 << " is greater than " << str1 << endl << endl;
+
+//         cout << "More? Enter yes or no: ";
+//         cin >> more;
+//     }
+//     while(more[0]=='y' || more[0]=='Y');
+
+//     return 0;
+// }
+
+
+/*----------------------------------------------------5.5.1------------------------------------------------------------
+
+Exercise 5.20: Write a program to read a sequence of strings from the standard input until either the same word occurs 
+twice in succession or all the words have been read. Use a while loop to read the text one word at a time. Use the break
+statement to terminate the loop if a word occurs twice in succession. Print the word if it occurs twice in succession, 
+or else print a message saying that no word was repeated.   */
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    string word, prev;
+    int flag=0;
+
+    while(cin >> word)
+    {
+        if(word == prev)
+        {
+            flag=1;
+            break;
+        }
+        else
+        {
+            flag=0;
+            prev = word;
+        }
+    }
+    if(flag==1)
+        cout << word <<  " occurs twice in succession.";
+    else
+        cout << "No word is repeated.";
+
+    return 0;
+}
