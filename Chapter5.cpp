@@ -680,32 +680,157 @@ twice in succession or all the words have been read. Use a while loop to read th
 statement to terminate the loop if a word occurs twice in succession. Print the word if it occurs twice in succession, 
 or else print a message saying that no word was repeated.   */
 
-#include<iostream>
-#include<string>
-using namespace std;
+// #include<iostream>
+// #include<string>
+// using namespace std;
 
-int main()
-{
-    string word, prev;
-    int flag=0;
+// int main()
+// {
+//     string word, prev;
+//     int flag=0;
 
-    while(cin >> word)
-    {
-        if(word == prev)
-        {
-            flag=1;
-            break;
-        }
-        else
-        {
-            flag=0;
-            prev = word;
-        }
-    }
-    if(flag==1)
-        cout << word <<  " occurs twice in succession.";
-    else
-        cout << "No word is repeated.";
+//     while(cin >> word)
+//     {
+//         if(word == prev)
+//         {
+//             flag=1;
+//             break;
+//         }
+//         else
+//         {
+//             flag=0;
+//             prev = word;
+//         }
+//     }
+//     if(flag==1)
+//         cout << word <<  " occurs twice in succession.";
+//     else
+//         cout << "No word is repeated.";
 
-    return 0;
-}
+//     return 0;
+// }
+
+
+
+/*----------------------------------------------------5.5.2------------------------------------------------------------
+
+Exercise 5.21: Revise the program from the exercise in § 5.5.1 (p. 191) so that it looks only for duplicated words that 
+start with an uppercase letter      */
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// int main()
+// {
+//     string word, prev;
+//     int flag=0;
+
+//     while (cin>>word)
+//     {
+//         if(isupper(word[0]) && word==prev)
+//         {
+//             flag=1;
+//             break;
+//         }
+//         else
+//         {
+//             flag=0;
+//             prev=word;
+//         }
+//     }
+//     if(flag==1)
+//         cout << word <<  " occurs twice in succession.";
+//     else
+//         cout << "No word is repeated.";
+
+//     return 0;
+// }
+
+
+
+/*----------------------------------------------------5.5.3------------------------------------------------------------
+
+Exercise 5.22: The last example in this section that jumped back to begin could be better written using a loop. Rewrite 
+the code to eliminate the goto.     */
+
+/*  for(int sz=get_size(); sz<=0; sz=get_size())
+        ;   //null statement 
+
+            OR
+    int sz=get_size();
+    while(sz<=0)
+        sz=get_size();     */
+
+
+
+/*----------------------------------------------------5.6.3------------------------------------------------------------
+
+Exercise 5.23: Write a program that reads two integers from the standard input and prints the result of dividing the 
+first number by the second.     */
+
+// #include<iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int i, j;
+//     cin >> i >> j;
+//     cout << i/j << endl;
+
+//     return 0;
+// }
+
+
+/*  Exercise 5.24: Revise your program to throw an exception if the second number is zero. Test your program with a zero
+    input to see what happens on your system if you don’t catch an exception.   */
+
+// #include<iostream>
+// #include<stdexcept>
+// using namespace std;
+
+// int main()
+// {
+//     int i,j;
+//     cin >> i >> j;
+
+//     if(j==0)
+//     {
+//         throw runtime_error("Divisor is 0");
+//     }
+//     cout << i/j;
+
+//     return 0;
+// }
+
+
+/*  Exercise 5.25: Revise your program from the previous exercise to use a try block to catch the exception. The catch 
+    clause should print a message to the user and ask them to supply a new number and repeat the code inside the try.  */
+
+// #include<iostream>
+// #include<stdexcept>
+// using namespace std;
+
+// int main()
+// {
+//     for(int i, j; cout << "Enter two integers: ", cin >> i >> j;)
+//     {
+//         try
+//         {
+//             if(j==0)
+//                 throw runtime_error("Divisor is 0");
+//             cout << i/j << endl;
+//         }
+//         catch(runtime_error err)
+//         {
+//             std::cerr << err.what() << '\n';
+//             cout << "Do you want to continue: 'y' or 'n': ";
+//             char c;
+//             cin >> c;
+
+//             if(!cin || c=='n')
+//                 break;
+//         }
+//     }  
+//     return 0;
+// }
