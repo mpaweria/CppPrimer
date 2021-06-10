@@ -184,21 +184,49 @@ Exercise 6.9: Write your own versions of the fact.cc and factMain.cc files. Thes
 from the exercises in the previous section. Use these files to understand how your compiler supports separate 
 compilation.    */
 
-#include <iostream>
-#include "Chapter6.h"
-#include "fact.cpp"
+// #include <iostream>
+// #include "Chapter6.h"
+// #include "fact.cpp"
+// using namespace std;
+
+// int main()
+// {
+//     int num, val;
+//     cout << "Enter a number of which you want factorial: ";
+//     cin >> num;
+//     cout << "Enter a number for absolute value: ";
+//     cin >> val;
+
+//     cout << endl << "Factorial of " << num << " is " << fact(num) << endl;
+//     cout << "Absolute value of " << val << " is " << abs(val);
+
+//     return 0;
+// }
+
+
+
+/*----------------------------------------------------6.2.1-------------------------------------------------------------
+
+Exercise 6.10: Using pointers, write a function to swap the values of two ints. Test the function by calling it and 
+printing the swapped values.    */
+
+#include<iostream>
 using namespace std;
+
+void swap(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = *a;   
+}
 
 int main()
 {
-    int num, val;
-    cout << "Enter a number of which you want factorial: ";
-    cin >> num;
-    cout << "Enter a number for absolute value: ";
-    cin >> val;
+    int x=25, y=50;
 
-    cout << endl << "Factorial of " << num << " is " << fact(num) << endl;
-    cout << "Absolute value of " << val << " is " << abs(val);
+    cout << "Value of a = " << x << " and value of b = "<<y << endl << "After swapping: " << endl;
+    swap(&x, &y);
+    cout << "Value of a = " << x << " and value of b = "<< y << endl;
 
     return 0;
 }
