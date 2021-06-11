@@ -205,28 +205,51 @@ compilation.    */
 
 
 
-/*----------------------------------------------------6.2.1-------------------------------------------------------------
+/*----------------------------------------------------6.2.1------------------------------------------------------------
 
 Exercise 6.10: Using pointers, write a function to swap the values of two ints. Test the function by calling it and 
 printing the swapped values.    */
 
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// using namespace std;
 
-void swap(int *a, int *b)
-{
-    int temp = *a;
-    *a = *b;
-    *b = *a;   
-}
+// void swap(int *a, int *b)
+// {
+//     int temp = *a;
+//     *a = *b;
+//     *b = *a;   
+// }
 
-int main()
-{
-    int x=25, y=50;
+// int main()
+// {
+//     int x=25, y=50;
 
-    cout << "Value of a = " << x << " and value of b = "<<y << endl << "After swapping: " << endl;
-    swap(&x, &y);
-    cout << "Value of a = " << x << " and value of b = "<< y << endl;
+//     cout << "Value of a = " << x << " and value of b = "<<y << endl << "After swapping: " << endl;
+//     swap(&x, &y);
+//     cout << "Value of a = " << x << " and value of b = "<< y << endl;
 
-    return 0;
-}
+//     return 0;
+// }
+
+
+
+
+/*----------------------------------------------------6.2.2------------------------------------------------------------
+
+Exercise 6.11: Write and test your own version of reset that takes a reference.     */
+
+// #include<iostream>
+// using namespace std;
+
+// int reset(int &ref)
+// {
+//     ref = 0;
+//     return ref;
+// }
+// int main()
+// {
+//     int num = 7;
+//     cout << num << endl;
+//     reset(num);
+//     cout << num;
+// }
