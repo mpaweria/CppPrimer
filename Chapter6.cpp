@@ -253,3 +253,25 @@ Exercise 6.11: Write and test your own version of reset that takes a reference. 
 //     reset(num);
 //     cout << num;
 // }
+
+
+/*  Exercise 6.12: Rewrite the program from exercise 6.10 in § 6.2.1 (p. 210) to use references instead of pointers to 
+    swap the value of two ints. Which version do you think would be easier to use and why?     */
+
+// #include<iostream>
+// using namespace std;
+
+// void swap(int &a, int &b)
+// {
+//     int temp = a;
+//     a=b;
+//     b=temp;
+// }
+
+// int main()
+// {
+//     int i=10, j=20;
+//     cout << "Value of i is " << i << " and value j is " << j <<endl;
+//     swap(i ,j);
+//     cout << "After swapping: " << endl << "Value of i is " << i << " and value j is " << j <<endl;
+// }
