@@ -1,0 +1,84 @@
+nav{
+    background-color: #214121;
+}
+.nav-item a{
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+}
+.carousel-item{
+    height: 650px;;
+}
+#heading{
+    background-color: white;
+    margin: 20px 0 0 75px;
+    width: 400px;
+}
+#p1{
+    margin: 20px 50px;
+    padding: 10px;
+    color: white;
+    background-color: #214121;
+}
+#form1{
+    width: 400px;
+    margin: 48px 0 0 50px;
+}
+.formElement{
+    margin: 4px;
+}
+button{
+    align-items: center;
+    margin: auto;
+    color: white;
+    background-color: #214121;
+    width: 150px; 
+}
+#map{
+    width: 1300px;
+    height: auto;
+}
+.first{
+    position: relative;
+    bottom: 300px;
+}
+.logo{
+    max-width: 100px;
+    height: auto;
+}
+h3{
+    text-align: center;
+}
+h6{
+    text-align: center;
+}
+.icon{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.icon img{
+    border: 1px solid black;
+    padding: 5px;
+    width: 100px;
+    border-radius: 50%;
+}
+hr{
+    align-content: center;
+    width: 150px;
+}
+footer{
+    background-color: #214121;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+span{
+    margin: 10px;
+}
+.form2{
+    text-align: center;
+    align-items: center;
+    width: 800px;
+}
