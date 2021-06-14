@@ -275,3 +275,39 @@ Exercise 6.11: Write and test your own version of reset that takes a reference. 
 //     swap(i ,j);
 //     cout << "After swapping: " << endl << "Value of i is " << i << " and value j is " << j <<endl;
 // }
+
+
+/*Exercise 6.13: Assuming T is the name of a type, explain the difference between a function declared as void f(T) and 
+    void f(T&).     */
+
+/*  void f(T) pass the argument by value, nothing the function does to the parameter will affect the argument. 
+    Void f(T&) pass a reference, will be bound to whatever T object we pass, changes done in the function will
+    be change the argument too.    */
+
+
+/*  Exercise 6.14: Give an example of when a parameter should be a reference type. Give an example of when a parameter
+    should not be a reference.    */
+
+/*  a parameter should be a reference type when we want to change the value of arguement:
+
+    void reset(int &i)
+    {
+            i = 0;
+    }
+
+a parameter should not be a reference when we don't want to change the value of the original argument:
+
+    void print(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+    {
+            for (std::vector<int>::iterator iter = begin; iter != end; ++iter)
+                    std::cout << *iter << std::endl;
+    }    */
+
+
+/*  Exercise 6.15: Explain the rationale for the type of each of find_char’s parameters. In particular, why is s a 
+    reference to const but occurs is a plain reference? Why are these parameters references, but the char parameter 
+    c is not? What would happen if we made s a plain reference? What if we made occurs a reference to const?    */
+
+/*  Because s should not be changed by this function, but occurs result must be calculated by the function.
+    Because c may be a temp varable, such as find_char(s, 'a', occurs).
+    s could be changed in the function, and occurs would not be changed. so occurs = 0; is an error.    */
