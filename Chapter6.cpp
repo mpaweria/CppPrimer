@@ -311,3 +311,18 @@ a parameter should not be a reference when we don't want to change the value of 
 /*  Because s should not be changed by this function, but occurs result must be calculated by the function.
     Because c may be a temp varable, such as find_char(s, 'a', occurs).
     s could be changed in the function, and occurs would not be changed. so occurs = 0; is an error.    */
+
+
+
+/*----------------------------------------------------6.2.3------------------------------------------------------------
+
+Exercise 6.16: The following function, although legal, is less useful  than it might be. Identify and correct the 
+limitation on this function: bool is_empty(string& s) { return s.empty(); }     */
+
+/*  Since this function doesn't change the argument, "const" shoud be added before string&s, otherwise this function
+    is misleading and can't be used with const string or in a const function.
+    Correction:
+    bool is_empty(const string &s)
+    {
+        return s.empty();
+    }   */
