@@ -326,3 +326,38 @@ limitation on this function: bool is_empty(string& s) { return s.empty(); }     
     {
         return s.empty();
     }   */
+
+
+/*  Exercise 6.17: Write a function to determine whether a string contains any capital letters. Write a function to 
+    change a string to all lowercase. Do the parameters you used in these functions have the same type? If so, why?
+    If not, why not?    */
+
+// #include <iostream>
+// #include <string>
+// using std::cout; using std::endl; using std::string;
+
+// bool any_capital(string const& str)
+// {
+//     for (auto ch : str)
+//         if (isupper(ch)) return true;
+//     return false;
+// }
+
+// void to_lowercase(string& str)
+// {
+//     for (auto& ch : str) ch = tolower(ch);
+// }
+
+// int main()
+// {
+//     string hello("Hello World!");
+//     cout << any_capital(hello) << endl;
+
+//     to_lowercase(hello);
+//     cout << hello << endl;
+
+//     return 0;
+// }
+
+// Not the same. For the first one "const" was used, since no change need to do for the argument. 
+// For the second function, "const" can't be used, because the content of the agument should be changed.
