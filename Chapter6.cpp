@@ -361,3 +361,42 @@ limitation on this function: bool is_empty(string& s) { return s.empty(); }     
 
 // Not the same. For the first one "const" was used, since no change need to do for the argument. 
 // For the second function, "const" can't be used, because the content of the agument should be changed.
+
+
+
+/*  Exercise 6.18: Write declarations for each of the following functions. When you write these declarations, use the 
+    name of the function to indicate what the function does.
+    (a) A function named compare that returns a bool and has two
+    parameters that are references to a class named matrix.
+    (b) A function named change_val that returns a vector<int> iterator
+    and takes two parameters: One is an int and the other is an
+    iterator for a vector<int>.      */
+
+//  (a) bool compare(matrix &a, matrix &b);
+//  (b) vector<int>::iterator change_val(int a, vector<int> iterator);       
+
+
+
+/*  Exercise 6.19: Given the following declarations, determine which calls are legal and which are illegal. For those 
+    that are illegal, explain why.
+    double calc(double);
+    int count(const string &, char);
+    int sum(vector<int>::iterator, vector<int>::iterator, int);
+    vector<int> vec(10);
+    (a) calc(23.4, 55.1);
+    (b) count("abcda", 'a');
+    (c) calc(66);
+    (d) sum(vec.begin(), vec.end(), 3.8);       */
+
+/*  (a) Illegal: calc expects only one argument.
+    (b) Legal.
+    (c) Legal.
+    (d) Legal (value of floating point will be truncated to int ie. 3.8 ->3).      */
+
+
+
+/*  Exercise 6.20: When should reference parameters be references to const? What happens if we make a parameter a 
+    plain reference when it could be a reference to const?      */
+
+/*  If somewhere const can be used, we should just use it because if we make a parameter a plain reference when it 
+    could be a reference to const, the reference value maybe changed.   */
