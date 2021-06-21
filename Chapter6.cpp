@@ -394,9 +394,30 @@ limitation on this function: bool is_empty(string& s) { return s.empty(); }     
     (d) Legal (value of floating point will be truncated to int ie. 3.8 ->3).      */
 
 
-
 /*  Exercise 6.20: When should reference parameters be references to const? What happens if we make a parameter a 
     plain reference when it could be a reference to const?      */
 
 /*  If somewhere const can be used, we should just use it because if we make a parameter a plain reference when it 
     could be a reference to const, the reference value maybe changed.   */
+
+
+
+/*----------------------------------------------------6.2.4------------------------------------------------------------  
+
+Exercise 6.21: Write a function that takes an int and a pointer to an int and returns the larger of the int value or the 
+value to which the pointer points. What type should you use for the pointer?       */
+
+// #include<iostream>
+// using namespace std;
+
+// int larger(int a, int *p)
+// {
+//     return (a > *p) ? a : *p;
+// }
+// int main()
+// {
+//     int num1=50, num2=20;
+//     cout << larger(num1, &num2);
+
+//     return 0;
+// }
