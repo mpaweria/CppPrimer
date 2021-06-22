@@ -447,7 +447,7 @@ value to which the pointer points. What type should you use for the pointer?    
 
 
 /*  Exercise 6.23: Write your own versions of each of the print functions presented in this section. Call each of these
-    functions to print i and j defined as follows:
+    functions to print i and j defined as follows:-
     int i = 0, j[2] = {0, 1};   */
 
 // #include<iostream>
