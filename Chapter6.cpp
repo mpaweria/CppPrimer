@@ -421,3 +421,91 @@ value to which the pointer points. What type should you use for the pointer?    
 
 //     return 0;
 // }
+
+
+//  Exercise 6.22: Write a function to swap two int pointers.
+
+// #include<iostream>
+// using namespace std;
+
+// void swap(int &a, int &b)
+// {
+//     int temp = a;
+//     a = b;
+//     b = temp;
+// }
+// int main()
+// {
+
+//     int a=5, b=10;
+//     cout << "a = " << a << " and b = " << b << endl;
+//     swap(a, b);
+//     cout << "After swapping: " << endl << "a = " << a << " and b = " << b;
+
+//     return 0;
+// }
+
+
+/*  Exercise 6.23: Write your own versions of each of the print functions presented in this section. Call each of these
+    functions to print i and j defined as follows:
+    int i = 0, j[2] = {0, 1};   */
+
+// #include<iostream>
+// using namespace std;
+
+// void print(const int *p)
+// {
+//     if(p)
+//         cout << "const int *p: " << *p << endl;
+// }
+// void print(const char *p)
+// {
+//     if(p)
+//     {
+//         cout << "const char *p: ";
+//         while(*p)
+//         {
+//             cout << *p++ << "  ";
+//         }
+//         cout << endl;
+//     }
+// }
+// void print(const int *beg, const int *end)
+// {
+//     cout << "int beg and end: ";
+//     while(beg!=end)
+//     {
+//         cout << *beg++ << "  ";
+//     }
+//     cout << endl;
+// }
+// void print(const int arr[], int size)
+// {
+//     cout << "const int arr[], int size: ";
+//     for(int i=0; i<=size; i++)
+//     {
+//         cout << arr[i] << "  ";
+//     }
+//     cout << endl;
+// }
+// void print(int (&arr)[2])
+// {
+//     cout << "int (&arr)[2]: ";
+//     for(auto ele: arr)
+//         cout << ele << "  ";
+//     cout << endl;
+// }
+
+// int main()
+// {
+//     int i = 0, j[2] = {0, 1}; 
+//     char ch[4] = "hey"; 
+
+//     print(ch);
+//     print(&i);
+//     print(begin(j), end(j));
+//     print(j, end(j)-begin(j));
+//     print(j);
+
+//     return 0;
+// }
