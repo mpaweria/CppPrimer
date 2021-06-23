@@ -509,3 +509,20 @@ value to which the pointer points. What type should you use for the pointer?    
 
 //     return 0;
 // }
+
+
+/*  Exercise 6.24: Explain the behavior of the following function. If there are problems in the code, explain what they
+    are and how you might fix them.
+    void print(const int ia[10])
+    {
+    for (size_t i = 0; i != 10; ++i)
+    cout << ia[i] << endl;
+    }   */
+
+/*  So we cannot pass an array by value, and when we pass an array to a function, we are actually passing a pointer to 
+    the array's first element.
+    In this question, const int ia[10] is actually same as const int*, and the size of the array is irrelevant. we can 
+    pass const int ia[3] or const int ia[255], there are no differences. If we want to pass an array which size is ten,
+    we should use reference like that:
+
+    void print10(const int (&ia)[10]) { //... }     */
