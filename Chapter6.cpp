@@ -526,3 +526,23 @@ value to which the pointer points. What type should you use for the pointer?    
     we should use reference like that:
 
     void print10(const int (&ia)[10]) { //... }     */
+
+
+
+ /*----------------------------------------------------6.2.5------------------------------------------------------------
+
+ Exercise 6.25: Write a main function that takes two arguments. Concatenate the supplied arguments and print the 
+ resulting string.      */
+
+// #include <iostream>
+// #include <string>
+
+// int main(int argc, char **argv)
+// {
+//     std::string str;
+//     for (int i = 1; i != argc; ++i)
+//         str += std::string(argv[i]) + " ";
+
+//     std::cout << str << std::endl;
+//     return 0;
+// }
