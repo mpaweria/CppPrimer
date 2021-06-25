@@ -546,3 +546,21 @@ value to which the pointer points. What type should you use for the pointer?    
 //     std::cout << str << std::endl;
 //     return 0;
 // }
+
+
+
+/*  Exercise 6.26: Write a program that accepts the options presented in this section. Print the values of the arguments
+    passed to main.     */
+
+// #include <iostream>
+// #include <string>
+
+// int main(int argc, char **argv)
+// {
+//     std::string str;
+//     for (int i = 1; i != argc; ++i)
+//         str += std::string(argv[i]) + " ";
+
+//     std::cout << str << std::endl;
+//     return 0;
+// }
