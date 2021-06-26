@@ -564,3 +564,31 @@ value to which the pointer points. What type should you use for the pointer?    
 //     std::cout << str << std::endl;
 //     return 0;
 // }
+
+
+
+/*----------------------------------------------------6.1.3-------------------------------------------------------------
+
+Exercise 6.27: Write a function that takes an initializer_list<int> and produces the sum of the elements in the list. */
+
+// #include<iostream>
+// #include<initializer_list>
+// using namespace std;
+
+// int sum(initializer_list<int> const& num)
+// {
+//     int sum=0;
+//     for(auto i:num)
+//     {
+//         sum += i;
+//     }
+//     return sum;
+// }
+// int main()
+// {
+//     auto arr = {1,2,3,4,5};
+//     cout << "sum = " << sum(arr) <<endl;
+
+//     return 0;
+// }
+
