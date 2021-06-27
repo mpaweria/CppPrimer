@@ -567,7 +567,7 @@ value to which the pointer points. What type should you use for the pointer?    
 
 
 
-/*----------------------------------------------------6.1.3-------------------------------------------------------------
+/*----------------------------------------------------6.2.6-------------------------------------------------------------
 
 Exercise 6.27: Write a function that takes an initializer_list<int> and produces the sum of the elements in the list. */
 
@@ -592,3 +592,16 @@ Exercise 6.27: Write a function that takes an initializer_list<int> and produces
 //     return 0;
 // }
 
+
+/*  Exercise 6.28: In the second version of error_msg that has an ErrCode parameter, what is the type of elem in the 
+    for loop?   */
+
+//  The type of elem in the for loop is const std::string&.
+
+
+/*  Exercise 6.29: When you use an initializer_list in a range for would you ever use a reference as the loop control 
+    variable? If so, why? If not, why not?    */
+
+/*  Subject to availability. When the variable type is a large space-consuming type such as a string, the overhead of 
+    copying can be reduced by reference. In other cases, the reference is not much different, because the elements of 
+    the initializer_list object are constants, and their values ​​cannot be modified even if they are referenced.   */
