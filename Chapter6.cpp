@@ -605,3 +605,15 @@ Exercise 6.27: Write a function that takes an initializer_list<int> and produces
 /*  Subject to availability. When the variable type is a large space-consuming type such as a string, the overhead of 
     copying can be reduced by reference. In other cases, the reference is not much different, because the elements of 
     the initializer_list object are constants, and their values ​​cannot be modified even if they are referenced.   */
+
+
+
+/*----------------------------------------------------6.3.2------------------------------------------------------------
+
+Exercise 6.30: Compile the version of str_subrange as presented on page 223 to see what your compiler does with the 
+indicated errors    */
+
+/* Error (Clang):
+
+    Non-void function 'str_subrange' should return a value. // error #1
+    Control may reach end of non-void function. // error #2     */
