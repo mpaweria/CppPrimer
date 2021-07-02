@@ -617,3 +617,8 @@ indicated errors    */
 
     Non-void function 'str_subrange' should return a value. // error #1
     Control may reach end of non-void function. // error #2     */
+
+
+//  Exercise 6.31: When is it valid to return a reference? A reference to const?
+
+//  When you can find the preexisting object that the reference refered.
