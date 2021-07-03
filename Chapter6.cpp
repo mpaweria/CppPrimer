@@ -622,3 +622,16 @@ indicated errors    */
 //  Exercise 6.31: When is it valid to return a reference? A reference to const?
 
 //  When you can find the preexisting object that the reference refered.
+
+
+
+/*  Exercise 6.32: Indicate whether the following function is legal. If so, explain what it does; if not, correct any 
+    errors and then explain it.
+    int &get(int *arry, int index) { return arry[index]; }
+    int main() {
+    int ia[10];
+    for (int i = 0; i != 10; ++i)
+    get(ia, i) = i;
+    }       */
+
+//  Legal, it gave the values (0 ~ 9) to array ia.
