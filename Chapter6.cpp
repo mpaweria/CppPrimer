@@ -635,3 +635,28 @@ indicated errors    */
     }       */
 
 //  Legal, it gave the values (0 ~ 9) to array ia.
+
+
+
+//  Exercise 6.33: Write a recursive function to print the contents of a vector.
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// using Iter = vector<int>::const_iterator;
+
+// int print(Iter first, Iter last)
+// {
+//     if(first!=last)
+//     {
+//         cout << *first << " ";
+//         print(++first, last);
+//     }
+
+//     return 0;
+// }
+// int main()
+// {
+//     vector<int> vec = {1,2,3,4,5};
+//     print(vec.begin(), vec.end());
+// }
