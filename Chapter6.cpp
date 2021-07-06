@@ -567,7 +567,7 @@ value to which the pointer points. What type should you use for the pointer?    
 
 
 
-/*----------------------------------------------------6.2.6-------------------------------------------------------------
+/*----------------------------------------------------6.2.6------------------------------------------------------------
 
 Exercise 6.27: Write a function that takes an initializer_list<int> and produces the sum of the elements in the list. */
 
@@ -575,19 +575,20 @@ Exercise 6.27: Write a function that takes an initializer_list<int> and produces
 // #include<initializer_list>
 // using namespace std;
 
-// int sum(initializer_list<int> const& num)
+// int sum(initializer_list<int> const& li)
 // {
 //     int sum=0;
-//     for(auto i:num)
+//     for(auto i=li.begin(); i!=li.end(); i++)
 //     {
-//         sum += i;
+//         sum += *i;
 //     }
 //     return sum;
 // }
 // int main()
 // {
 //     auto arr = {1,2,3,4,5};
-//     cout << "sum = " << sum(arr) <<endl;
+
+//     cout << "Sum of the given elements is " << sum(arr);
 
 //     return 0;
 // }
@@ -600,7 +601,7 @@ Exercise 6.27: Write a function that takes an initializer_list<int> and produces
 
 
 /*  Exercise 6.29: When you use an initializer_list in a range for would you ever use a reference as the loop control 
-    variable? If so, why? If not, why not?    */
+    variable? If so, why? If not, why not?    */ 
 
 /*  Subject to availability. When the variable type is a large space-consuming type such as a string, the overhead of 
     copying can be reduced by reference. In other cases, the reference is not much different, because the elements of 
