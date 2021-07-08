@@ -661,3 +661,6 @@ indicated errors    */
 //     vector<int> vec = {1,2,3,4,5};
 //     print(vec.begin(), vec.end());
 // }
+
+
+// did nothing today, just saving my streak.
