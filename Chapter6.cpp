@@ -614,53 +614,13 @@ Exercise 6.27: Write a function that takes an initializer_list<int> and produces
 Exercise 6.30: Compile the version of str_subrange as presented on page 223 to see what your compiler does with the 
 indicated errors    */
 
-/* Error (Clang):
-
+/*  Error (Clang):
     Non-void function 'str_subrange' should return a value. // error #1
     Control may reach end of non-void function. // error #2     */
 
 
-//  Exercise 6.31: When is it valid to return a reference? A reference to const?
 
-//  When you can find the preexisting object that the reference refered.
+//  Exercise 6.31: When is it valid to return a reference? A reference to const?    
 
-
-
-/*  Exercise 6.32: Indicate whether the following function is legal. If so, explain what it does; if not, correct any 
-    errors and then explain it.
-    int &get(int *arry, int index) { return arry[index]; }
-    int main() {
-    int ia[10];
-    for (int i = 0; i != 10; ++i)
-    get(ia, i) = i;
-    }       */
-
-//  Legal, it gave the values (0 ~ 9) to array ia.
-
-
-
-//  Exercise 6.33: Write a recursive function to print the contents of a vector.
-
-// #include<iostream>
-// #include<vector>
-// using namespace std;
-// using Iter = vector<int>::const_iterator;
-
-// int print(Iter first, Iter last)
-// {
-//     if(first!=last)
-//     {
-//         cout << *first << " ";
-//         print(++first, last);
-//     }
-
-//     return 0;
-// }
-// int main()
-// {
-//     vector<int> vec = {1,2,3,4,5};
-//     print(vec.begin(), vec.end());
-// }
-
-
-// did nothing today, just saving my streak.
+/*  When you can find the preexisting object that the reference refered and reference to const, when the returned 
+    variable or object's value is fixed.    */
