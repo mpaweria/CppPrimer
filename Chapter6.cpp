@@ -619,8 +619,64 @@ indicated errors    */
     Control may reach end of non-void function. // error #2     */
 
 
-
 //  Exercise 6.31: When is it valid to return a reference? A reference to const?    
 
 /*  When you can find the preexisting object that the reference refered and reference to const, when the returned 
     variable or object's value is fixed.    */
+
+
+/*  Exercise 6.32: Indicate whether the following function is legal. If so, explain what it does; if not, correct 
+    any errors and then explain it.
+    int &get(int *arry, int index) 
+    { return arry[index]; }
+    int main() {
+    int ia[10];
+    for (int i = 0; i != 10; ++i)
+    get(ia, i) = i;
+    }       */
+
+//  The given function is legal. It returns the value of array ia.
+
+
+//  Exercise 6.33: Write a recursive function to print the contents of a vector.
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// void print(vector<int>::iterator beg, const vector<int>::iterator &end)
+// {
+//     if(beg==end)
+//     {
+//         return;
+//     }
+//     cout << *beg << " ";
+//     print(++beg, end);
+// }
+
+// int main()
+// {
+//     vector<int> vec{1,2,3,4,5};
+
+//     print(vec.begin(), vec.end());
+
+//     return 0;
+// }
+
+
+/*  Exercise 6.34: What would happen if the stopping condition in factorial were
+    if (val != 0)      */
+
+/*  If the stopping condition in facorial was val!=0, then there would have been two situations
+
+    Case 1: If argument is positive, then there will not be any change in the answer just one multiplication will
+    increase. This could reduce the efficiency of program for larger arguments.
+
+    Case 2: If argument is negative, then the recursion will never stop. As a result, stack overflow would occur.   */
+
+
+//  Exercise 6.35: In the call to fact, why did we pass val - 1 rather than val--?
+
+/*  We passed v-1 rather than v-- because, v-- is a post decrement operator, thus the value of v will decrease after 
+    the calling of the fact function again, which means the fact function will always take val as argument and a 
+    recursion loop (ie. the recursion will never stop) will occur.      */
