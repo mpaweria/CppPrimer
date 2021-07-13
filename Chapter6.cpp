@@ -680,3 +680,12 @@ indicated errors    */
 /*  We passed v-1 rather than v-- because, v-- is a post decrement operator, thus the value of v will decrease after 
     the calling of the fact function again, which means the fact function will always take val as argument and a 
     recursion loop (ie. the recursion will never stop) will occur.      */
+
+
+
+/*----------------------------------------------------6.3.3------------------------------------------------------------
+
+Exercise 6.36: Write the declaration for a function that returns a reference to an array of ten strings, without 
+using either a trailing return, decltype, or a type alias.     */
+
+// string (&func(string (&arrStr)[10]))[10]
