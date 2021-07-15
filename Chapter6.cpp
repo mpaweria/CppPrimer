@@ -689,3 +689,18 @@ Exercise 6.36: Write the declaration for a function that returns a reference to 
 using either a trailing return, decltype, or a type alias.     */
 
 // string (&func(string (&arrStr)[10]))[10]
+
+
+
+/*  Exercise 6.37: Write three additional declarations for the function in the previous exercise. One should use a 
+    type alias, one should use a trailing return, and the third should use decltype. Which form do you prefer and 
+    why?    */
+
+// using ArrT = string[10];
+// ArrT& func1(ArrT& arr);
+
+// auto func2(ArrT& arr) -> string(&)[10];
+
+// string arrS[10];
+// decltype(arrS)& func3(ArrT& arr);
+// I pefer the first one. because it is more simpler to me.
