@@ -688,7 +688,7 @@ indicated errors    */
 Exercise 6.36: Write the declaration for a function that returns a reference to an array of ten strings, without 
 using either a trailing return, decltype, or a type alias.     */
 
-// string (&func(string (&arrStr)[10]))[10]
+// string (&func(string arg))[10];
 
 
 
@@ -696,11 +696,27 @@ using either a trailing return, decltype, or a type alias.     */
     type alias, one should use a trailing return, and the third should use decltype. Which form do you prefer and 
     why?    */
 
-// using ArrT = string[10];
-// ArrT& func1(ArrT& arr);
+/*  Using type alias:
+    typedef string strArr[10];
+            or
+    using strArr = string[10];
 
-// auto func2(ArrT& arr) -> string(&)[10];
+    strArr &func(string arg);
 
-// string arrS[10];
-// decltype(arrS)& func3(ArrT& arr);
-// I pefer the first one. because it is more simpler to me.
+    Using Trailing return:
+    auto func(string arg)->string(&)[10];
+
+    Using Decltype return:
+    string strArr[10];
+    decltype(strArr) &func(string arg);
+
+    I prefer the first one because its synatx is easy to write and remember.    */
+
+
+
+/*  Exercise 6.38: Revise the arrPtr function on to return a reference to the array     */
+
+// decltype(arrStr)& arrPtr(int i)
+// {            
+//     return (i % 2) ? odd : even;
+// }
