@@ -713,10 +713,26 @@ using either a trailing return, decltype, or a type alias.     */
     I prefer the first one because its synatx is easy to write and remember.    */
 
 
-
 /*  Exercise 6.38: Revise the arrPtr function on to return a reference to the array     */
 
 // decltype(arrStr)& arrPtr(int i)
 // {            
 //     return (i % 2) ? odd : even;
 // }
+
+
+
+/*----------------------------------------------------6.4-----------------------------------------------------------
+
+Exercise 6.39: Explain the effect of the second declaration in each one of the following sets of declarations. 
+Indicate which, if any, are illegal.
+    (a) int calc(int, int);
+    int calc(const int, const int);
+    (b) int get();
+    double get();
+    (c) int reset(int );
+    double reset(double );      */
+
+/*  (a) Legal, repeated declaration(without definition) is allowed in C++.
+    (b) Illegal, only the return type differs in the overloaded functions.
+    (c) Legal, Overloaded functions with different parameter list and return type.  */
