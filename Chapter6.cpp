@@ -736,3 +736,16 @@ Indicate which, if any, are illegal.
 /*  (a) Legal, repeated declaration(without definition) is allowed in C++.
     (b) Illegal, only the return type differs in the overloaded functions.
     (c) Legal, Overloaded functions with different parameter list and return type.  */
+
+
+
+/*----------------------------------------------------6.5.1----------------------------------------------------------
+
+Exercise 6.40: Which, if either, of the following declarations are errors? Why?
+(a) int ff(int a, int b = 0, int c = 0);
+(b) char *init(int ht = 24, int wd, char bckgrnd);      */  
+
+/*  (a) No errors.
+    (b) Missing default arguments on parameter 'wd' and 'bckgrnd'.
+        Correction: 
+        char *init(int wd, char bckgrnd, int ht=24); //non-default arg can come before default arg but not after.   */
