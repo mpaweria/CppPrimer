@@ -749,3 +749,16 @@ Exercise 6.40: Which, if either, of the following declarations are errors? Why?
     (b) Missing default arguments on parameter 'wd' and 'bckgrnd'.
         Correction: 
         char *init(int wd, char bckgrnd, int ht=24); //non-default arg can come before default arg but not after.   */
+
+
+
+/*  Exercise 6.41: Which, if any, of the following calls are illegal? Why? Which, if any, are legal but unlikely to 
+    match the programmer’s intent? Why?
+    char *init(int ht, int wd = 80, char bckgrnd = ' ');
+    (a) init();
+    (b) init(24,10);
+    (c) init(14, '*');      */
+
+/*  (a) Illegal, no value for ht.
+    (b) Legal
+    (c) Legal, but unlikely to match programmer's intent as wd would set to *.      */
