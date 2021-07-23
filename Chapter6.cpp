@@ -762,3 +762,26 @@ Exercise 6.40: Which, if either, of the following declarations are errors? Why?
 /*  (a) Illegal, no value for ht.
     (b) Legal
     (c) Legal, but unlikely to match programmer's intent as wd would set to *.      */
+
+
+
+/*  Exercise 6.42: Give the second parameter of make_plural (§ 6.3.2, p. 224) a default argument of 's'. Test your 
+    program by printing singular and plural versions of the words success and failure.      */
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// string makePlural(int ctr, const string &word, const string &ending="s")
+// {
+//     return (ctr>1) ? word + ending : word;
+// }
+// int main()
+// {
+//     cout << "Singular success: " << makePlural(1, "success", "es") << endl;
+//     cout << "Plural success: " << makePlural(4, "success", "es") << endl;
+//     cout << "Singular failure: " << makePlural(1, "failure") << endl;
+//     cout << "Plural failure: " << makePlural(4, "failure") << endl;
+
+//     return 0;
+// }
