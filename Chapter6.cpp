@@ -785,3 +785,59 @@ Exercise 6.40: Which, if either, of the following declarations are errors? Why?
 
 //     return 0;
 // }
+
+
+
+/*----------------------------------------------------6.5.2----------------------------------------------------------
+
+Exercise 6.43: Which one of the following declarations and definitions would you put in a header? In a source file? 
+Explain why.
+(a) inline bool eq(const BigInt&, const BigInt&) {...}
+(b) void putValues(int *arr, int size);         */
+
+/*  Both two should put in a header. 
+    (a) is an inline function. 
+    (b) is the declaration of useful function. We always put them in the header.    */
+
+
+//  Exercise 6.44: Rewrite the isShorter function from § 6.2.2 (p. 211) to be inline.
+
+// #include<string>
+// #include<iostream>
+// using namespace std;
+
+// inline bool isShorter(const string &s1, const string &s2)
+// {
+//     return s1.size() <s2.size();
+// }
+// int main()
+// {
+//     cout << isShorter("monika", "samuel");
+//     return 0;
+// }
+
+
+/*  Exercise 6.45: Review the programs you’ve written for the earlier exercises and decide whether they should be 
+    defined as inline. If so, do so. If not, explain why they should not be inline.     */
+
+/*  For example, the function arrPtr in [Exercise 6.38] and make_plural in [Exercise 6.42] should be defined as 
+    inline. But the function func in [Exercise 6.4] shouldn't. It is not that small and it's only being called once. 
+    Hence, it will probably not expand as inline.   
+    
+    6.38 
+    inline decltype(arrStr)& arrPtr(int i)
+    {            
+        return (i % 2) ? odd : even;
+    }
+    
+    6.42
+    inline string makePlural(int ctr, const string &word, const string &ending="s")
+    {
+        return (ctr>1) ? word + ending : word;
+    }       */
+
+
+//  Exercise 6.46: Would it be possible to define isShorter as a constexpr? If so, do so. If not, explain why not.
+
+/*  No.
+    Because std::string::size() is not a constexpr function and s1.size() == s2.size() is not a constant expression.*/
