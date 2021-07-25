@@ -841,3 +841,50 @@ Explain why.
 
 /*  No.
     Because std::string::size() is not a constexpr function and s1.size() == s2.size() is not a constant expression.*/
+
+
+
+/*----------------------------------------------------6.5.3----------------------------------------------------------
+
+Exercise 6.47: Revise the program you wrote in the exercises in § 6.3.2 (p. 228) that used recursion to print the 
+contents of a vector to conditionally print information about its execution. For example, you might print the size
+of the vector on each call. Compile and run the program with debugging turned on and again with it turned off.     */
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// // #define NDEBUG               // To turnoff degugger comment this out
+
+// void print(vector<int>::iterator beg, const vector<int>::iterator &end)
+// {
+//     #ifndef NDEBUG                                      // debugger
+//         cout << "Vector size: " << end-beg << " ";    
+//     #endif
+
+//     if(beg==end)
+//     {
+//         return;
+//     }
+//     cout << *beg << " " << endl;
+//     print(++beg, end);
+// }
+
+// int main()
+// {
+//     vector<int> vec{1,2,3,4,5};
+
+//     print(vec.begin(), vec.end());
+
+//     return 0;
+// }
+
+
+/*  Exercise 6.48: Explain what this loop does and whether it is a good use of assert:
+        string s;
+        while (cin >> s && s != sought) { } // empty body
+        assert(cin);        */
+
+/*  The loop is letting the user input a word until it is equal to sought.
+    It is not a good use of assert because if the user inputs a word, cin will always have content, so assert (cin) 
+    will always be true, so it doesn't make any sense, using assert(s==sought) will be a better option.     */
