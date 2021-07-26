@@ -888,3 +888,15 @@ of the vector on each call. Compile and run the program with debugging turned on
 /*  The loop is letting the user input a word until it is equal to sought.
     It is not a good use of assert because if the user inputs a word, cin will always have content, so assert (cin) 
     will always be true, so it doesn't make any sense, using assert(s==sought) will be a better option.     */
+
+
+
+/*-----------------------------------------------------6.6----------------------------------------------------------
+
+Exercise 6.49: What is a candidate function? What is a viable function?     */
+
+/*  Candidate function: Set of functions that are considered when resolving a function call. (all the functions with 
+    the name used in the call for which a declaration is in scope at the time of the call.)
+
+    Viale function: Subset of the candidate functions that could match a given call. It have the same number of 
+    parameters as arguments to the call, and each argument type can be converted to the corresponding parameter type. */
