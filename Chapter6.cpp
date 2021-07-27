@@ -900,3 +900,17 @@ Exercise 6.49: What is a candidate function? What is a viable function?     */
 
     Viale function: Subset of the candidate functions that could match a given call. It have the same number of 
     parameters as arguments to the call, and each argument type can be converted to the corresponding parameter type. */
+
+
+/*  Exercise 6.50: Given the declarations for f from page 242, list the viable functions, if any for each of the 
+    following calls. Indicate which function is the best match, or if the call is illegal whether there is no match 
+    or why the call is ambiguous.
+    (a) f(2.56, 42)
+    (b) f(42)
+    (c) f(42, 0)
+    (d) f(2.56, 3.14)       */
+
+/*  (a) illegal. 2.56 match the double, but 42 match the int.
+    (b) match void f(int).
+    (c) match void f(int, int).
+    (d) match void f(double, double = 3.14).        */
