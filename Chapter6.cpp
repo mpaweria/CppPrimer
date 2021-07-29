@@ -952,3 +952,17 @@ Exercise 6.49: What is a candidate function? What is a viable function?     */
     
 //     return 0;
 // }
+
+
+
+/*-----------------------------------------------------6.6----------------------------------------------------------
+
+Exercise 6.52: Given the following declarations,
+    void manip(int, int);
+    double dobj;
+    what is the rank (§ 6.6.1, p. 245) of each conversion in the following calls?
+    (a) manip('a', 'z');
+    (b) manip(55.4, dobj);      */
+
+/*  (a) Match through a promotion
+    (b) Arithmetic type conversion      */
