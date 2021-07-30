@@ -966,3 +966,19 @@ Exercise 6.52: Given the following declarations,
 
 /*  (a) Match through a promotion
     (b) Arithmetic type conversion      */
+
+
+/*  Exercise 6.53: Explain the effect of the second declaration in each one of the following sets of declarations. 
+    Indicate which, if any, are illegal.
+    (a) int calc(int&, int&);
+    int calc(const int&, const int&);
+    (b) int calc(char*, char*);
+    int calc(const char*, const char*);
+    (c) int calc(char*, char*);
+    int calc(char* const, char* const);     */
+
+/*  (a) int calc(int&, int&); // calls lookup(int&)
+        int calc(const int&, const int&); // calls lookup(const int&)
+    (b) int calc(char*, char*); // calls lookup(char*)
+        int calc(const char*, const char*); // calls lookup(const char *)
+    (c) illegal. both calls lookup(char*)       */
