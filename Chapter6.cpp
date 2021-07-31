@@ -982,3 +982,26 @@ Exercise 6.52: Given the following declarations,
     (b) int calc(char*, char*); // calls lookup(char*)
         int calc(const char*, const char*); // calls lookup(const char *)
     (c) illegal. both calls lookup(char*)       */
+
+
+
+/*-----------------------------------------------------6.7----------------------------------------------------------
+
+Exercise 6.54: Write a declaration for a function that takes two int parameters and returns an int, and declare a 
+vector whose elements have this function pointer type.      */
+
+/*  int func(int a, int b);
+
+    using pFunc1 = decltype(func) *;
+    typedef decltype(func) *pFunc2;
+    using pFunc3 = int (*)(int a, int b);
+    using pFunc4 = int(int a, int b);
+    typedef int(*pFunc5)(int a, int b);
+    using pFunc6 = decltype(func);
+
+    std::vector<pFunc1> vec1;
+    std::vector<pFunc2> vec2;
+    std::vector<pFunc3> vec3;
+    std::vector<pFunc4*> vec4;
+    std::vector<pFunc5> vec5;
+    std::vector<pFunc6*> vec6;      */
