@@ -1005,3 +1005,12 @@ vector whose elements have this function pointer type.      */
     std::vector<pFunc4*> vec4;
     std::vector<pFunc5> vec5;
     std::vector<pFunc6*> vec6;      */
+
+
+/*  Exercise 6.55: Write four functions that add, subtract, multiply, and divide two int values. Store pointers to 
+    these values in your vector from the previous exercise.     */
+
+/*  int add(int a, int b) { return a + b; }
+    int subtract(int a, int b) { return a - b; }
+    int multiply(int a, int b) { return a * b; }
+    int divide(int a, int b) { return b != 0 ? a / b : 0; }     */
