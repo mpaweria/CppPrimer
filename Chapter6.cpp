@@ -891,100 +891,6 @@ of the vector on each call. Compile and run the program with debugging turned on
 
 
 
-/*-----------------------------------------------------6.6----------------------------------------------------------
-
-Exercise 6.49: What is a candidate function? What is a viable function?     */
-
-/*  Candidate function: Set of functions that are considered when resolving a function call. (all the functions with 
-    the name used in the call for which a declaration is in scope at the time of the call.)
-
-    Viale function: Subset of the candidate functions that could match a given call. It have the same number of 
-    parameters as arguments to the call, and each argument type can be converted to the corresponding parameter type. */
-
-
-/*  Exercise 6.50: Given the declarations for f from page 242, list the viable functions, if any for each of the 
-    following calls. Indicate which function is the best match, or if the call is illegal whether there is no match 
-    or why the call is ambiguous.
-    (a) f(2.56, 42)
-    (b) f(42)
-    (c) f(42, 0)
-    (d) f(2.56, 3.14)       */
-
-/*  (a) illegal. 2.56 match the double, but 42 match the int.
-    (b) match void f(int).
-    (c) match void f(int, int).
-    (d) match void f(double, double = 3.14).        */
-
-
-/*  Exercise 6.51: Write all four versions of f. Each function should print a distinguishing message. Check your 
-    answers for the previous exercise. If your answers were incorrect, study this section until you understand why
-    your answers were wrong.    */
-
-// #include <iostream>
-// using std::cout; using std::endl;
-
-// void f()
-// {
-//     cout << "f()" << endl;
-// }
-
-// void f(int)
-// {
-//     cout << "f(int)" << endl;
-// }
-
-// void f(int, int)
-// {
-//     cout << "f(int, int)" << endl;
-// }
-
-// void f(double, double)
-// {
-//     cout << "f(double, double)" << endl;
-// }
-
-// int main()
-// {
-//     // f(2.56, 42); // error: 'f' is ambiguous.
-//     f(42);
-//     f(42, 0);
-//     f(2.56, 3.14);
-    
-//     return 0;
-// }
-
-
-
-/*-----------------------------------------------------6.6----------------------------------------------------------
-
-Exercise 6.52: Given the following declarations,
-    void manip(int, int);
-    double dobj;
-    what is the rank (§ 6.6.1, p. 245) of each conversion in the following calls?
-    (a) manip('a', 'z');
-    (b) manip(55.4, dobj);      */
-
-/*  (a) Match through a promotion
-    (b) Arithmetic type conversion      */
-
-
-/*  Exercise 6.53: Explain the effect of the second declaration in each one of the following sets of declarations. 
-    Indicate which, if any, are illegal.
-    (a) int calc(int&, int&);
-    int calc(const int&, const int&);
-    (b) int calc(char*, char*);
-    int calc(const char*, const char*);
-    (c) int calc(char*, char*);
-    int calc(char* const, char* const);     */
-
-/*  (a) int calc(int&, int&); // calls lookup(int&)
-        int calc(const int&, const int&); // calls lookup(const int&)
-    (b) int calc(char*, char*); // calls lookup(char*)
-        int calc(const char*, const char*); // calls lookup(const char *)
-    (c) illegal. both calls lookup(char*)       */
-
-
-
 /*-----------------------------------------------------6.7----------------------------------------------------------
 
 Exercise 6.54: Write a declaration for a function that takes two int parameters and returns an int, and declare a 
@@ -1021,3 +927,99 @@ vector whose elements have this function pointer type.      */
 // std::vector<decltype(func) *> vec{ add, subtract, multiply, divide };
 // for (auto f : vec)
 //           std::cout << f(2, 2) << std::endl;
+
+
+
+/*-----------------------------------------------------6.6----------------------------------------------------------
+
+Exercise 6.49: What is a candidate function? What is a viable function?     */
+
+/*  Candidate functions are the functions which have the same name as the function called and for which declaration
+    is visible at a point of time.
+
+    Viable functions: The set of functions from candidate functions which have the same number of parameters as 
+    there are arguments in the call and each argument matches or is convertible to the type of its corresponding 
+    parameter.   */
+
+
+/*  Exercise 6.50: Given the declarations for f from page 242, list the viable functions, if any for each of the 
+    following calls. Indicate which function is the best match, or if the call is illegal whether there is no match
+    or why the call is ambiguous.
+    (a) f(2.56, 42)
+    (b) f(42)
+    (c) f(42, 0)
+    (d) f(2.56, 3.14)       */
+
+/*  (a) Ambiguous call, as 2.56 matches best with f(double, double) whereas 42 matches best with f(int, int), thus 
+        there is no one best match.
+    (b) f(int)
+    (c) f(int, int)
+    (d) f(double, double=3.14)       */
+
+
+/*  Exercise 6.51: Write all four versions of f. Each function should print a distinguishing message. Check your 
+    answers for the previous exercise. If your answers were incorrect, study this section until you understand why
+    your answers were wrong.    */
+
+// #include<iostream>
+// using namespace std;
+
+// void f()
+// {
+//     cout << "Void f()"  << endl;
+// }
+// void f(int)
+// {
+//     cout << "Void f(int)" << endl;
+// }
+// void f(int, int)
+// {
+//     cout << "Void f(int, int)" << endl;
+// }
+// void f(double, double=3.14)
+// {
+//     cout << "Void f(double, double=3.14)" << endl;
+// }
+
+// int main()
+// {
+//     // f(2.56, 42);         // Error: f is ambiguous.
+//     f(42);
+//     f(42, 0);
+//     f(2.56, 3.14);
+// }
+
+
+
+/*-----------------------------------------------------6.6.1--------------------------------------------------------
+
+Exercise 6.52: Given the following declarations,
+    void manip(int, int);
+    double dobj;
+what is the rank (§ 6.6.1, p. 245) of each conversion in the following calls?
+    (a) manip('a', 'z');
+    (b) manip(55.4, dobj);      */
+
+/*  (a) Match thorugh promotion.
+    (b) Match through arithmetic type conversion.    */
+
+
+/*  Exercise 6.53: Explain the effect of the second declaration in each one of the following sets of declarations. 
+    Indicate which, if any, are illegal.
+    (a) int calc(int&, int&);
+    int calc(const int&, const int&);
+    (b) int calc(char*, char*);
+    int calc(const char*, const char*);
+    (c) int calc(char*, char*);
+    int calc(char* const, char* const);     */
+
+/*  (a) int calc(int&, int&);                   // calls calc(int&)
+        int calc(const int&, const int&);       // calls calc(const int&)
+    (b) int calc(char*, char*);                 // calls calc(char*)
+        int calc(const char*, const char*);     // calls calc(const char*)
+    (c) Illegal, both calls calc(char*).      */
+
+
+
+/*-----------------------------------------------------6.7----------------------------------------------------------
+
