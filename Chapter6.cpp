@@ -891,45 +891,6 @@ of the vector on each call. Compile and run the program with debugging turned on
 
 
 
-/*-----------------------------------------------------6.7----------------------------------------------------------
-
-Exercise 6.54: Write a declaration for a function that takes two int parameters and returns an int, and declare a 
-vector whose elements have this function pointer type.      */
-
-/*  int func(int a, int b);
-
-    using pFunc1 = decltype(func) *;
-    typedef decltype(func) *pFunc2;
-    using pFunc3 = int (*)(int a, int b);
-    using pFunc4 = int(int a, int b);
-    typedef int(*pFunc5)(int a, int b);
-    using pFunc6 = decltype(func);
-
-    std::vector<pFunc1> vec1;
-    std::vector<pFunc2> vec2;
-    std::vector<pFunc3> vec3;
-    std::vector<pFunc4*> vec4;
-    std::vector<pFunc5> vec5;
-    std::vector<pFunc6*> vec6;      */
-
-
-/*  Exercise 6.55: Write four functions that add, subtract, multiply, and divide two int values. Store pointers to 
-    these values in your vector from the previous exercise.     */
-
-/*  int add(int a, int b) { return a + b; }
-    int subtract(int a, int b) { return a - b; }
-    int multiply(int a, int b) { return a * b; }
-    int divide(int a, int b) { return b != 0 ? a / b : 0; }     */
-
-
-//  Exercise 6.56: Call each element in the vector and print their result.
-
-// std::vector<decltype(func) *> vec{ add, subtract, multiply, divide };
-// for (auto f : vec)
-//           std::cout << f(2, 2) << std::endl;
-
-
-
 /*-----------------------------------------------------6.6----------------------------------------------------------
 
 Exercise 6.49: What is a candidate function? What is a viable function?     */
@@ -1023,3 +984,71 @@ what is the rank (§ 6.6.1, p. 245) of each conversion in the following calls?
 
 /*-----------------------------------------------------6.7----------------------------------------------------------
 
+Exercise 6.54: Write a declaration for a function that takes two int parameters and returns an int, and declare a 
+vector whose elements have this function pointer type.      */
+
+// int func(int a, int b);
+
+// using pFunc1 = decltype(func) *;
+// typedef decltype(func) *pFunc2;
+// using pFunc3 = int(*)(int a, int b);
+// using pFunc4 = int(int a, int b);
+// typedef int(*pFunc5)(int a, int b);
+// using pFunc6 = decltype(func);
+
+// vector<pFunc1> vec1;
+// vector<pFunc2> vec2;
+// vector<pFunc3> vec3;
+// vector<pFunc4*> vec4;
+// vector<pFunc5> vec5;
+// vector<pFunc6*> vec6;
+
+
+/*  Exercise 6.55: Write four functions that add, subtract, multiply, and divide two int values. Store pointers to 
+    these values in your vector from the previous exercise.     */
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int add(int a, int b)
+// {
+//     return a+b;
+// }
+// int subtract(int a, int b)
+// {
+//     return a-b;
+// }
+// int multiply(int a, int b)
+// {
+//     return a*b;
+// }
+// int divide(int a, int b)
+// {
+//     return (b!=0 ? a/b : 0);
+// }
+
+// int main()
+// {
+//     vector<int (*)(int, int)> calc = {add, subtract, multiply, divide};
+
+//     cout << "Input 2 integers:" << endl;
+// 	int a, b;
+// 	while (cin >> a >> b) {
+// 		cout << "add: " << calc[0](a, b) << endl;
+// 		cout << "subtract: " << calc[1](a, b) << endl;
+// 		cout << "multiply: " << calc[2](a, b) << endl;
+// 		cout << "divide: " << calc[3](a, b) << endl;
+// 	}
+//     return 0;
+// }
+
+
+//  Exercise 6.56: Call each element in the vector and print their result.
+
+// 	while (cin >> a >> b) {
+// 		cout << "add: " << calc[0](a, b) << endl;
+// 		cout << "subtract: " << calc[1](a, b) << endl;
+// 		cout << "multiply: " << calc[2](a, b) << endl;
+// 		cout << "divide: " << calc[3](a, b) << endl;
+// 	}

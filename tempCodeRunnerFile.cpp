@@ -1,17 +1,23 @@
 #include<iostream>
-#include<string>
+#include<vector>
 using namespace std;
 
-string makePlural(int ctr, const string &word, const string &ending="s")
+int add(int a, int b)
 {
-    return (ctr>1) ? word + ending : word;
+    return a+b;
 }
+int subtract(int a, int b)
+{
+    return a-b;
+}
+int multiply(int a, int b)
+{
+    return a*b;
+}
+int divide(int a, int b)
+{
+    return (b!=0 ? a/b : 0);
+}
+
 int main()
 {
-    cout << "Singular success: " << makePlural(1, "success", "es") << endl;
-    cout << "Plural success: " << makePlural(4, "success", "es") << endl;
-    cout << "Singular failure: " << makePlural(1, "failure") << endl;
-    cout << "Plural failure: " << makePlural(4, "failure") << endl;
-
-    return 0;
-}
