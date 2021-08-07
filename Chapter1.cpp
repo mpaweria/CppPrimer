@@ -391,7 +391,7 @@ writing each transaction to the standard output.  */
 //     Sales_item item1, item2;
 //     cout << "Enter 2 books: ";
 //     cin >> item1 >> item2;
-//     if(item1.isbn()==item2.isbn())
+//     if(item1.bookNo()==item2.bookNo())
 //     {
 //         cout << "Sum: " << item1+item2;
 //     }
@@ -417,7 +417,7 @@ writing each transaction to the standard output.  */
 //         Sales_item item;
 //         while(cin >> item)
 //         {
-//             if(book.isbn()==item.isbn())
+//             if(book.bookNo()==item.bookNo())
 //             {
 //                 book+=item;
 //             }
@@ -456,7 +456,7 @@ Exercise 1.23: Write a program that reads several transactions and counts how ma
 //         Sales_item newBook;
 //         while(cin >> newBook)
 //         {
-//             if(currentBook.isbn()==newBook.isbn())
+//             if(currentBook.bookNo()==newBook.bookNo())
 //             {
 //                 count++;
 //             }
@@ -509,7 +509,7 @@ presented in this section.  */
 //         Sales_item trans;
 //         while(cin >> trans)
 //         {
-//             if(total.isbn()==trans.isbn())
+//             if(total.bookNo()==trans.bookNo())
 //             {
 //                 total+=trans;
 //             }

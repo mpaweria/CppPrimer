@@ -726,7 +726,7 @@ Exercise 2.42: Write your own version of the Sales_data.h header and use it to r
 // {
 // 	Sales_data book;
 // 	double price;
-// 	cin >> book.isbn >> book.unitSold >> price;
+// 	cin >> book.bookNo >> book.unitSold >> price;
 // 	book.calRevenue(price);
 // 	book.print();
 
@@ -743,12 +743,12 @@ Exercise 2.42: Write your own version of the Sales_data.h header and use it to r
 // {
 // 	Sales_data book1, book2;
 // 	double price1, price2;
-// 	cin >> book1.isbn >> book1.unitSold >> price1;
-// 	cin >> book2.isbn >> book2.unitSold >> price2;
+// 	cin >> book1.bookNo >> book1.unitSold >> price1;
+// 	cin >> book2.bookNo >> book2.unitSold >> price2;
 // 	book1.calRevenue(price1);
 // 	book2.calRevenue(price2);
 
-// 	if (book1.isbn == book2.isbn)
+// 	if (book1.bookNo == book2.bookNo)
 // 	{
 // 		book1.addData(book2);
 // 		book1.print();
@@ -772,16 +772,16 @@ Exercise 2.42: Write your own version of the Sales_data.h header and use it to r
 // {
 //     Sales_data total;
 // 	double totalPrice;
-// 	if (cin >> total.isbn >> total.unitSold >> totalPrice)
+// 	if (cin >> total.bookNo >> total.unitSold >> totalPrice)
 // 	{
 // 		total.calRevenue(totalPrice);
 // 		Sales_data trans;
 // 		double transPrice;
 
-// 		while (cin >> trans.isbn >> trans.unitSold >> transPrice)
+// 		while (cin >> trans.bookNo >> trans.unitSold >> transPrice)
 // 		{
 // 			trans.calRevenue(transPrice);
-// 			if (total.isbn == trans.isbn)
+// 			if (total.bookNo == trans.bookNo)
 // 			{
 // 				total.addData(trans);
 // 			}

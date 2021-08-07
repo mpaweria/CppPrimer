@@ -89,3 +89,15 @@ Exercise 7.2: Add the combine and isbn members to the Sales_data class you wrote
 //     }
 //     return 0;
 // }
+
+
+/*  Exercise 7.4: Write a class named Person that represents the name and address of a person. Use a string to hold 
+    each of these elements. Subsequent exercises will incrementally add features to this class.     */
+
+//  Defined Person class in Person.h
+
+
+/*  Exercise 7.5: Provide operations in your Person class to return the name and address. Should these functions be 
+    const? Explain your choice.     */
+
+// Yes, these functions should be const so that they don't modify the functions on which they are called.
