@@ -6,7 +6,7 @@ using namespace std;
 
 struct Sales_data
 {
-    string isbn;
+    string bookNo;
     unsigned unitSold = 0;
     double revenue = 0.0;
 
@@ -15,17 +15,26 @@ struct Sales_data
     double avgPrice();
     void setData(Sales_data data);
     void addData(Sales_data data);
+    string isbn() {return bookNo; }
+    Sales_data& combine(const Sales_data&);
 };
+
+Sales_data& Sales_data::combine(const Sales_data &newBook)
+{
+    unitSold += newBook.unitSold;
+    revenue += newBook.revenue;
+    return *this;
+}
 
 void Sales_data::setData(Sales_data data)
 {
-    isbn = data.isbn;
+    bookNo = data.bookNo;
     unitSold = data.unitSold;
     revenue = data.revenue;
 }
 void Sales_data::addData(Sales_data data)
 {
-    if(isbn!=data.isbn)
+    if(bookNo!=data.bookNo)
         return;
     else
     {
@@ -35,7 +44,7 @@ void Sales_data::addData(Sales_data data)
 }
 void Sales_data::print()
 {
-    cout << isbn << " " << unitSold << " " << revenue << endl;
+    cout << bookNo << " " << unitSold << " " << revenue << endl;
     double averageprice = avgPrice();
     if(averageprice!=0)
     {
