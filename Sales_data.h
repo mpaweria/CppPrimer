@@ -19,6 +19,7 @@ struct Sales_data
     Sales_data& combine(const Sales_data&);
 };
 
+// member functions
 Sales_data& Sales_data::combine(const Sales_data &newBook)
 {
     unitSold += newBook.unitSold;
@@ -70,4 +71,28 @@ double Sales_data::avgPrice()
         return 0.0;
     }
 }
+
+
+// non-member funtions
+istream &read(istream &in, Sales_data &item)
+{
+    double price;
+    in >> item.bookNo >> item.unitSold >> price;
+    item.revenue = price * item.unitSold;
+    return in;
+}
+
+Sales_data add(Sales_data &book1, Sales_data &book2)
+{
+    Sales_data sum = book1;
+    sum.combine(book2);
+    return sum;
+}
+
+ostream &display(ostream &out, Sales_data  &item)
+{
+    out << item.isbn() << " " << item.unitSold << " " << item.revenue;
+    return out;
+}
+
 #endif 
