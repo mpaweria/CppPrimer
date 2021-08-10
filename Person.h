@@ -4,13 +4,14 @@
 #include<string>
 using namespace std;
 
-struct Person 
+class Person 
 {
-    string name;
-    string address;
+    public:                 // otherwise non-member functions were not able to access data members or could have  
+        string name;        // used struct in place of class as its members are public by default.
+        string address;
 
-    string getName() {return name;}
-    string getAddress() {return address;}
+        string getName() {return name;}
+        string getAddress() {return address;}
 };
 
 //  non-member function
