@@ -171,3 +171,31 @@ Exercise 7.6: Define your own versions of the add, read, and print functions.   
     istream secondStep = read(firstStep, data2);
     if(secondStep);     
     The condition of if would read two objects at one time.     */
+
+
+
+/*----------------------------------------------------7.1.4----------------------------------------------------------
+
+Exercise 7.11: Add constructors to your Sales_data class and write a program to use each of the constructors.   */
+
+#include<iostream>
+#include<string>
+#include "Sales_data.h"
+using namespace std;
+
+int main()
+{
+    Sales_data item1;
+    display(std::cout, item1) << std::endl;
+    
+    Sales_data item2("0-201-78345-X");
+    display(std::cout, item2) << std::endl;
+    
+    Sales_data item3("0-201-78345-X", 3, 20.00);
+    display(std::cout, item3) << std::endl;
+    
+    Sales_data item4(std::cin);
+    display(std::cout, item4) << std::endl;
+    
+    return 0;
+}
