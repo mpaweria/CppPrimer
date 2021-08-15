@@ -237,3 +237,8 @@ Exercise 7.11: Add constructors to your Sales_data class and write a program to 
     
 //     return 0;
 // }
+
+
+//  7.14
+
+// Sales_data() : bookNo(""), units_sold(0) , revenue(0){ }
