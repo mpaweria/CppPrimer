@@ -7,7 +7,7 @@ using namespace std;
 class Person 
 {
     public:                 // otherwise non-member functions were not able to access data members or could have  
-        string name;        // used struct in place of class as its members are public by default.
+        string name;        // use struct in place of class as its members are public by default.
         string address;
 
         string getName() {return name;}
