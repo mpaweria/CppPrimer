@@ -204,7 +204,7 @@ Exercise 7.11: Add constructors to your Sales_data class and write a program to 
 /*  Exercise 7.12: Move the definition of the Sales_data constructor that takes an istream into the body of the 
     Sales_data class        */
 
-//  will do tomorrow 
+//  will do tomorrow ugggggggggggggghhhhhhhhh 18-08-21
 
 
 //  Exercise 7.13: Rewrite the program from page 255 to use the istream constructor.
