@@ -6,17 +6,18 @@ using namespace std;
 
 struct Sales_data
 {
-    // added
+    // constructors
     Sales_data() = default;
-    Sales_data(const std::string &s):bookNo(s) { }
-    Sales_data(const std::string &s, unsigned n, double p):bookNo(s), unitSold(n), revenue(n*p){ }
-    Sales_data(std::istream &is) { read(is, *this);
-    // till here
+    Sales_data(const string &s): bookNo(s) { }
+    Sales_data(const string &s, unsigned n, double p): bookNo(s), unitSold(n), revenue(p*n) { }
+    Sales_data(istream &is);
 
+    // members
     string bookNo;
     unsigned unitSold = 0;
     double revenue = 0.0;
 
+    // methods
     void print();
     void calRevenue(double price);
     double avgPrice();
@@ -100,6 +101,12 @@ ostream &display(ostream &out, Sales_data  &item)
 {
     out << item.isbn() << " " << item.unitSold << " " << item.revenue;
     return out;
+}
+
+// Constructor outside class
+Sales_data::Sales_data(istream &is)
+{
+    read(is, *this);
 }
 
 #endif 
