@@ -4,13 +4,15 @@
 #include<string>
 using namespace std;
 
+struct Sales_data;
+istream &read(istream &in, Sales_data &item);
 struct Sales_data
 {
     // constructors
     Sales_data() = default;
     Sales_data(const string &s): bookNo(s) { }
     Sales_data(const string &s, unsigned n, double p): bookNo(s), unitSold(n), revenue(p*n) { }
-    Sales_data(istream &is);
+    Sales_data(istream &is) { read(is, *this);}
 
     // members
     string bookNo;
@@ -102,11 +104,11 @@ ostream &display(ostream &out, Sales_data  &item)
     out << item.isbn() << " " << item.unitSold << " " << item.revenue;
     return out;
 }
-
-// Constructor outside class
-Sales_data::Sales_data(istream &is)
-{
-    read(is, *this);
-}
+ 
+// Constructor outside class for question 7.11
+// Sales_data::Sales_data(istream &is)
+// {
+//     read(is, *this);
+// }
 
 #endif 

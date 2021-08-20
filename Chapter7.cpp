@@ -204,10 +204,44 @@ Exercise 7.11: Add constructors to your Sales_data class and write a program to 
 /*  Exercise 7.12: Move the definition of the Sales_data constructor that takes an istream into the body of the 
     Sales_data class        */
 
-//  will do tomorrow ugggggggggggggghhhhhhhhh 18-08-21
+//  Done in Sales_data.h
 
 
 //  Exercise 7.13: Rewrite the program from page 255 to use the istream constructor.
+
+// #include <iostream>
+// #include "Sales_data.h"
+// #include <string>
+// using namespace std;
+
+// int main()
+// {
+//     Sales_data total(cin);
+//     if(!total.isbn().empty())
+//     {
+//         istream &is = cin;
+//         while(is)
+//         {
+//             Sales_data trans(is);
+//             if(!is)
+//                 break;
+//             if(total.isbn() == trans.isbn())
+//                 total.combine(trans);
+//             else
+//             {
+//                 display(cout, total) << endl;
+//                 total = trans;
+//             }
+//         }
+//         display(cout, total) << endl;
+//     }
+//     else
+//     {
+//         cerr << "No data entered!" << endl;
+//         return -1;
+//     }
+//     return 0;
+// }
 
 // #include "ex7_12.h"
 
@@ -239,44 +273,12 @@ Exercise 7.11: Add constructors to your Sales_data class and write a program to 
 // }
 
 
-//  7.14
+/*  Exercise 7.14: Write a version of the default constructor that explicitly initializes the members to the values 
+    we have provided as in-class initializers.      */
 
 // Sales_data() : bookNo(""), units_sold(0) , revenue(0){ }
 
 
 //  Exercise 7.15: Add appropriate constructors to your Person class.
 
-// #ifndef CP5_ex7_15_h
-// #define CP5_ex7_15_h
-
-// #include <string>
-// #include <iostream>
-
-// struct Person;
-// std::istream &read(std::istream&, Person&);
-
-// struct Person {
-//     Person() = default;
-//     Person(const std::string sname, const std::string saddr):name(sname), address(saddr){ }
-//     Person(std::istream &is){ read(is, *this); }
-    
-//     std::string getName() const { return name; }
-//     std::string getAddress() const { return address; }
-    
-//     std::string name;
-//     std::string address;
-// };
-
-// std::istream &read(std::istream &is, Person &person)
-// {
-//     is >> person.name >> person.address;
-//     return is;
-// }
-
-// std::ostream &print(std::ostream &os, const Person &person)
-// {
-//     os << person.name << " " << person.address;
-//     return os;
-// }
-
-// #endif
+// Done in Person.h
