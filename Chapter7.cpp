@@ -282,3 +282,18 @@ Exercise 7.11: Add constructors to your Sales_data class and write a program to 
 //  Exercise 7.15: Add appropriate constructors to your Person class.
 
 // Done in Person.h
+
+
+
+/*----------------------------------------------------7.2----------------------------------------------------------
+
+Exercise 7.16: What, if any, are the constraints on where and how often an access specifier may appear inside a class
+definition? What kinds of members should be defined after a public specifier? What kinds should be private?     */
+
+/*  There are no restrictions on how often an access specifier may appear.The specified access level remains in 
+effect until the next access specifier or the end of the class body.
+
+The members which are accessible to all parts of the program should define after a public specifier.
+
+The members which are accessible to the member functions of the class but are not accessible to code that uses the 
+class should define after a private specifier.      */
