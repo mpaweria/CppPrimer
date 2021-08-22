@@ -297,3 +297,9 @@ The members which are accessible to all parts of the program should define after
 
 The members which are accessible to the member functions of the class but are not accessible to code that uses the 
 class should define after a private specifier.      */
+
+
+//  Exercise 7.17: What, if any, are the differences between using class or struct?
+
+/*  The only difference between using a struct keyword or a class keyword to define a class is the access control.
+    By default the members of struct are public and the members of class are private.   */
