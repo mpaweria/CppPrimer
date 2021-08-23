@@ -303,3 +303,12 @@ class should define after a private specifier.      */
 
 /*  The only difference between using a struct keyword or a class keyword to define a class is the access control.
     By default the members of struct are public and the members of class are private.   */
+
+
+//  Exercise 7.18: What is encapsulation? Why is it useful?
+
+/*  Encapsulation enforces the separation of a class’ interface and implementation. A class that is encapsulated 
+    hides its implementation: users of the class can use the interface but have no access to the implementation.
+    Advantages:
+    User code cannot inadvertently corrupt the state of an encapsulated object.
+    The implementation of an encapsulated class can change over time without requiring changes in user-level code.  */
