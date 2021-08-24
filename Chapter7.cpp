@@ -312,3 +312,10 @@ class should define after a private specifier.      */
     Advantages:
     User code cannot inadvertently corrupt the state of an encapsulated object.
     The implementation of an encapsulated class can change over time without requiring changes in user-level code.  */
+
+
+/*  Exercise 7.19: Indicate which members of your Person class you would declare as public and which you would 
+    declare as private. Explain your choice.    */
+
+/*  i'd make the members name and address private and constructors, getName(), getAddress() public as the interface 
+    should be defined as public, but the data shouldn't be exposes outside the class.     */
