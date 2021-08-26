@@ -338,3 +338,10 @@ Exercise 7.20: When are friends useful? Discuss the pros and cons of using frien
     Cons:
     Lessens encapsulation and therefore maintainability.
     Code verbosity, declarations inside the class, outside the class.    */
+
+
+/*  Exercise 7.21: Update your Sales_data class to hide its implementation. The programs you’ve written to use 
+    Sales_data operations should still continue to work. Recompile those programs with your new class definition
+    to verify that they still work.     */
+
+//  Done in Sales_data.h

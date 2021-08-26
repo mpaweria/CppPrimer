@@ -4,20 +4,19 @@
 #include<string>
 using namespace std;
 
-struct Sales_data;
-istream &read(istream &in, Sales_data &item);
-struct Sales_data
+class Sales_data
 {
+    // friend so that they can access its private members
+    friend istream &read(istream &in, Sales_data &item);
+    friend Sales_data add(Sales_data &book1, Sales_data &book2);
+    friend ostream &display(ostream &out, Sales_data  &item);
+
+    public:
     // constructors
     Sales_data() = default;
     Sales_data(const string &s): bookNo(s) { }
     Sales_data(const string &s, unsigned n, double p): bookNo(s), unitSold(n), revenue(p*n) { }
     Sales_data(istream &is) { read(is, *this);}
-
-    // members
-    string bookNo;
-    unsigned unitSold = 0;
-    double revenue = 0.0;
 
     // methods
     void print();
@@ -27,6 +26,12 @@ struct Sales_data
     void addData(Sales_data data);
     string isbn() {return bookNo; }
     Sales_data& combine(const Sales_data&);
+
+    private:
+    // members
+    string bookNo;
+    unsigned unitSold = 0;
+    double revenue = 0.0;
 };
 
 // member functions
@@ -112,3 +117,5 @@ ostream &display(ostream &out, Sales_data  &item)
 // }
 
 #endif 
+
+// isbn 0-201-78345-X 3 20.00
