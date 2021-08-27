@@ -26,6 +26,12 @@ class Sales_data
     void addData(Sales_data data);
     string isbn() {return bookNo; }
     Sales_data& combine(const Sales_data&);
+    string getBookNo() { return bookNo;}
+    unsigned getUnitSold() { return unitSold;}
+    double getRevenue() { return revenue;}
+    void setBookNo(string newBookNo) { bookNo = newBookNo;}
+    void setUnitSold(unsigned newUnit) { unitSold = newUnit;}
+
 
     private:
     // members

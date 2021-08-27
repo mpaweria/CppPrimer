@@ -12,16 +12,23 @@ defined for the exercises in § 2.6.1 (p. 72).     */
 // {
 //     Sales_data total;
 //     double totalPrice =0;
-    
-//     if(cin >> total.bookNo >> total.unitSold >> totalPrice)
+//     string booknum;
+//     unsigned units = 0;
+//     if(cin >> booknum >> units >> totalPrice)
 //     {
+//         total.setBookNo(booknum);
+//         total.setUnitSold(units);
 //         total.calRevenue(totalPrice);
 //         Sales_data trans;
 //         double transPrice =0;
-//         while(cin >> trans.bookNo >> trans.unitSold >> transPrice)
+//         string booknum2;
+//         unsigned units2 = 0;
+//         while(cin >> booknum2 >> units2 >> totalPrice)
 //         {
+//             trans.setBookNo(booknum2);
+//             trans.setUnitSold(units2);
 //             trans.calRevenue(transPrice);
-//             if(total.bookNo == trans.bookNo)
+//             if(total.getBookNo() == trans.getBookNo())
 //             {
 //                 total.addData(trans);
 //             }
@@ -128,7 +135,7 @@ Exercise 7.6: Define your own versions of the add, read, and print functions.   
 
 //         while (read(cin, trans))
 //         {
-//             if(total.bookNo == trans.bookNo)
+            // if(total.getBookNo() == trans.getBookNo())         // to access private members
 //             {
 //                 // add(total, trans);            doubt here
 //                 total.combine(trans);
@@ -345,3 +352,8 @@ Exercise 7.20: When are friends useful? Discuss the pros and cons of using frien
     to verify that they still work.     */
 
 //  Done in Sales_data.h
+
+
+//  Exercise 7.22: Update your Person class to hide its implementation.
+
+//  Done in Person.h
