@@ -357,3 +357,11 @@ Exercise 7.20: When are friends useful? Discuss the pros and cons of using frien
 //  Exercise 7.22: Update your Person class to hide its implementation.
 
 //  Done in Person.h
+
+
+
+/*----------------------------------------------------7.3.1----------------------------------------------------------
+
+Exercise 7.23: Write your own version of the Screen class.      */
+
+//  Done in Screen.h
