@@ -365,3 +365,8 @@ Exercise 7.20: When are friends useful? Discuss the pros and cons of using frien
 Exercise 7.23: Write your own version of the Screen class.      */
 
 //  Done in Screen.h
+
+
+//  Exercise 7.23
+
+//  Done in Screen.h
